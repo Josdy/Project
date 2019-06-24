@@ -5,6 +5,9 @@
  */
 package f.project.view;
 
+import f.project.view.Informationview;
+import java.awt.Dimension;
+
 /**
  *
  * @author jvaldez
@@ -17,8 +20,14 @@ public class MenuView extends javax.swing.JFrame {
     public MenuView() {
         initComponents();
         this.setLocationRelativeTo(this);
+     
     }
-
+    public Informationview iv= new Informationview();
+    public EmployeeView ev= new EmployeeView();
+    
+    public TaskView tv= new TaskView();
+    public ReportView rv= new ReportView();
+    public DailyAssigmentsView dav= new DailyAssigmentsView();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,13 +40,20 @@ public class MenuView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         rSPanelCircleImage1 = new rojerusan.RSPanelCircleImage();
+        btnEmployee = new rojerusan.RSButtonIconI();
+        btnTask = new rojerusan.RSButtonIconI();
+        btnDailyAssigments = new rojerusan.RSButtonIconI();
+        btnReport = new rojerusan.RSButtonIconI();
+        btnInformation = new rojerusan.RSButtonIconI();
+        desktop = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administracion de Recursos Humanos");
+        setBackground(new java.awt.Color(0, 112, 192));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 112, 192));
 
-        jPanel2.setBackground(new java.awt.Color(0, 128, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 86, 179));
 
         rSPanelCircleImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/menu .jpg"))); // NOI18N
 
@@ -52,6 +68,55 @@ public class MenuView extends javax.swing.JFrame {
             .addGap(0, 150, Short.MAX_VALUE)
         );
 
+        btnEmployee.setBackground(new java.awt.Color(0, 86, 179));
+        btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/employee.jpg"))); // NOI18N
+        btnEmployee.setText("Empleado");
+        btnEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmployeeActionPerformed(evt);
+            }
+        });
+
+        btnTask.setBackground(new java.awt.Color(0, 86, 179));
+        btnTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/task.jpg"))); // NOI18N
+        btnTask.setText("Tareas Diarias");
+        btnTask.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTask.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTaskActionPerformed(evt);
+            }
+        });
+
+        btnDailyAssigments.setBackground(new java.awt.Color(0, 86, 179));
+        btnDailyAssigments.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/adminrrhh.jpg"))); // NOI18N
+        btnDailyAssigments.setText("Asignacion Carga Laboral");
+        btnDailyAssigments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDailyAssigmentsActionPerformed(evt);
+            }
+        });
+
+        btnReport.setBackground(new java.awt.Color(0, 86, 179));
+        btnReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/report.jpg"))); // NOI18N
+        btnReport.setText("Reporte");
+        btnReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportActionPerformed(evt);
+            }
+        });
+
+        btnInformation.setBackground(new java.awt.Color(0, 86, 179));
+        btnInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/info.jpg"))); // NOI18N
+        btnInformation.setText("Informacion");
+        btnInformation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnInformation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInformationActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -60,13 +125,39 @@ public class MenuView extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(64, Short.MAX_VALUE))
+            .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnTask, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnDailyAssigments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnInformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(rSPanelCircleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(btnEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDailyAssigments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnInformation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
+        desktop.setLayout(desktopLayout);
+        desktopLayout.setHorizontalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+        desktopLayout.setVerticalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -75,11 +166,13 @@ public class MenuView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 648, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(desktop))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(desktop)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,6 +188,60 @@ public class MenuView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformationActionPerformed
+        // TODO add your handling code here:
+        desktop.add(iv);
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = ev.getSize();
+        iv.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        iv.show();
+        
+      
+    }//GEN-LAST:event_btnInformationActionPerformed
+
+    private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
+        // TODO add your handling code here:
+        desktop.add(rv);
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = ev.getSize();
+        rv.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        rv.show();
+    }//GEN-LAST:event_btnReportActionPerformed
+
+    private void btnDailyAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyAssigmentsActionPerformed
+        // TODO add your handling code here:
+         desktop.add(dav);
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = ev.getSize();
+        dav.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        dav.show();
+    }//GEN-LAST:event_btnDailyAssigmentsActionPerformed
+
+    private void btnTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaskActionPerformed
+        // TODO add your handling code here:
+        desktop.add(tv);
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = ev.getSize();
+        tv.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        tv.show();
+
+    }//GEN-LAST:event_btnTaskActionPerformed
+
+    private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
+        // TODO add your handling code here:
+        
+        
+       
+             
+        desktop.add(ev);
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = ev.getSize();
+        ev.setLocation((desktopSize.width - FrameSize.width)/2, (desktopSize.height- FrameSize.height)/2);
+        ev.show();
+       
+       
+    }//GEN-LAST:event_btnEmployeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,6 +279,12 @@ public class MenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSButtonIconI btnDailyAssigments;
+    private rojerusan.RSButtonIconI btnEmployee;
+    private rojerusan.RSButtonIconI btnInformation;
+    private rojerusan.RSButtonIconI btnReport;
+    private rojerusan.RSButtonIconI btnTask;
+    private javax.swing.JDesktopPane desktop;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private rojerusan.RSPanelCircleImage rSPanelCircleImage1;

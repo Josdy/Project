@@ -12,11 +12,11 @@ public class UserModel {
     public boolean findUser(UserDto obj) {
         String userBD = "uni";
         String userPWS = "fiis";
-        boolean swt = false;
+        boolean flag = false;
 
         if ((obj.getUsername().equals(userBD)) && (obj.getPassword().equals(userPWS))) {
-            swt = true;
+            flag = true;
         }
-        return swt;
+        return flag;
     }
 }
