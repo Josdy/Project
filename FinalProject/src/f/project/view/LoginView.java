@@ -225,7 +225,9 @@ public class LoginView extends javax.swing.JFrame {
         boolean istrue = userCtl.validateLogin(userDto);
         if (istrue) {
             this.dispose();
+            JOptionPane.showMessageDialog(this, "Bienvenido usuario : " + '"' + username.toUpperCase()  + '"', "Welcome Message" , JOptionPane.INFORMATION_MESSAGE);
             menu.setVisible(true);
+            
         } else {
             txtUser.setText("");
             txtPassword.setText("");
