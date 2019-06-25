@@ -7,13 +7,14 @@ package f.project.view;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
-import uni.taller.ctl.UserCtl;
-import uni.taller.dto.UserDto;
+
 
 /**
  *
  * @author jvaldez
  */
+import f.project.ctl.UserCtl;
+import f.project.dto.UserDto;
 public class LoginView extends javax.swing.JFrame {
 
     /**

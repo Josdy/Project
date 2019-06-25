@@ -1,5 +1,5 @@
 
-package uni.taller.dto;
+package f.project.dto;
 
 /**
  *

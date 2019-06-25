@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uni.taller.ctl;
+package f.project.ctl;
 
-import uni.taller.dto.UserDto;
-import uni.taller.model.UserModel;
+import f.project.dto.UserDto;
+import f.project.dao.UserDao;
 
 /**
  *
@@ -18,7 +18,7 @@ public class UserCtl {
     
      */
     public boolean validateLogin(UserDto  obj) {
-        UserModel userModel=new UserModel();
+        UserDao userModel=new UserDao();
         return userModel.findUser(obj);
     }
 

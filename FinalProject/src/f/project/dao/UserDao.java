@@ -1,13 +1,13 @@
 
-package uni.taller.model;
+package f.project.dao;
 
-import uni.taller.dto.UserDto;
+import f.project.dto.UserDto;
 
 /**
  *
  * @author jvaldez
  */
-public class UserModel {
+public class UserDao {
 
     public boolean findUser(UserDto obj) {
         String userBD = "uni";
