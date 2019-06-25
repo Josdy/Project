@@ -22,10 +22,10 @@ public class TaskCtl extends TaskAbstract{
     public void InsertTask(int cod, String desc, String pri, int time, String est) {
         TaskDto task = new TaskDto();
         task.setDescription(desc);
-        task.setEstado(est);
-        task.setPrioridad(pri);
-        task.setTiempo(time);
-        task.setCodigo(cod);
+        task.setStatus(est);
+        task.setPriority(pri);
+        task.setTime(time);
+        task.setCode(cod);
         arregloTask.add(task);
     }
 
@@ -34,7 +34,7 @@ public class TaskCtl extends TaskAbstract{
         int resultado = -1;
         for (int i = 0; i < arregloTask.size(); i++) {
             TaskDto objTask = (TaskDto) arregloTask.get(i);
-            if (objTask.getCodigo() == cod) {
+            if (objTask.getCode() == cod) {
                 resultado = i;
                 break;
             }

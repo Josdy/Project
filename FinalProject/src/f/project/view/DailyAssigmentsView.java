@@ -1,7 +1,5 @@
 package f.project.view;
 
-import com.sun.java.swing.plaf.windows.resources.windows;
-
 public class DailyAssigmentsView extends javax.swing.JInternalFrame {
 
     public DailyAssigmentsView() {
@@ -42,7 +40,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(tableAssignTask);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 329, 749, 238));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 749, 238));
 
         cboEmployees.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
         getContentPane().add(cboEmployees, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 46, 438, 37));

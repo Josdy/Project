@@ -2,11 +2,11 @@ package f.project.dto;
 
 public class TaskDto {
 
-    private int codigo;
+    private int code;
     private String description;
-    private String prioridad;
-    private int tiempo;
-    private String estado;
+    private String priority;
+    private int time;
+    private String status;
 
     public TaskDto() {
     }
@@ -19,36 +19,36 @@ public class TaskDto {
         this.description = description;
     }
 
-    public String getPrioridad() {
-        return prioridad;
+    public String getPriority() {
+        return priority;
     }
 
-    public void setPrioridad(String prioridad) {
-        this.prioridad = prioridad;
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 
-    public int getTiempo() {
-        return tiempo;
+    public int getTime() {
+        return time;
     }
 
-    public void setTiempo(int tiempo) {
-        this.tiempo = tiempo;
+    public void setTime(int time) {
+        this.time = time;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getStatus() {
+        return status;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getCode() {
+        return code;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCode(int code) {
+        this.code = code;
     }
 
 }

@@ -6,10 +6,10 @@ public class EmployeeDto {
     private String name;
     private String surname;
     private String jobTitle;
-    private Double sueldo;
-    private int telefono;
-    private String grado;
-    private String Direccion;
+    private Double salary;
+    private int cellphone;
+    private String grade;
+    
 
     public EmployeeDto() {
     }
@@ -46,36 +46,30 @@ public class EmployeeDto {
         this.jobTitle = jobTitle;
     }
 
-    public Double getSueldo() {
-        return sueldo;
+    public Double getSalary() {
+        return salary;
     }
 
-    public void setSueldo(Double sueldo) {
-        this.sueldo = sueldo;
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
-    public int getTelefono() {
-        return telefono;
+    public int getCellphone() {
+        return cellphone;
     }
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
+    public void setCellphone(int cellphone) {
+        this.cellphone = cellphone;
     }
 
-    public String getGrado() {
-        return grado;
+    public String getGrade() {
+        return grade;
     }
 
-    public void setGrado(String grado) {
-        this.grado = grado;
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 
-    public String getDireccion() {
-        return Direccion;
-    }
-
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
+   
 
 }

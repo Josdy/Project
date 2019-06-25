@@ -19,16 +19,15 @@ public class EmployeeCtl extends EmployeeAbstract {
         this.arrayEmployee = arrayEmployee;
     }
 
-    public void InsertEmployee(int cod, String nom, String ape, String job, Double sue, int tel, String gra, String dir) {
+    public void InsertEmployee(int cod, String nom, String ape, String job, Double sue, int tel, String gra) {
         EmployeeDto Employee = new EmployeeDto();
         Employee.setCode(cod);
         Employee.setName(nom);
         Employee.setSurname(ape);
         Employee.setJobTitle(job);
-        Employee.setSueldo(sue);
-        Employee.setTelefono(tel);
-        Employee.setGrado(gra);
-        Employee.setDireccion(dir);
+        Employee.setSalary(sue);
+        Employee.setCellphone(tel);
+        Employee.setGrade(gra);
         arrayEmployee.add(Employee);
     }
 
