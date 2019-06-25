@@ -1,37 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package f.project.dto;
 
-/**
- *
- * @author JOSDY
- */
 public class EmployeeDto {
-    private String code;
+
+    private int code;
     private String name;
     private String surname;
     private String jobTitle;
-    
-    public EmployeeDto(String code, String name, String surname, String jobTitle) {
-        this.code = code;
-        this.name = name;
-        this.surname = surname;
-        this.jobTitle = jobTitle;
-    }
-    
+    private Double sueldo;
+    private int telefono;
+    private String grado;
+    private String Direccion;
 
-    public String getCode() {
+    public EmployeeDto() {
+    }
+
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
-
-   
 
     public String getName() {
         return name;
@@ -56,8 +45,37 @@ public class EmployeeDto {
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
-     
 
-    
-    
+    public Double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(Double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getGrado() {
+        return grado;
+    }
+
+    public void setGrado(String grado) {
+        this.grado = grado;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+
 }

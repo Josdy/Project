@@ -1,10 +1,5 @@
-
 package f.project.dto;
 
-/**
- *
- * @author jvaldez
- */
 public class UserDto {
   private String code;
   private String username;

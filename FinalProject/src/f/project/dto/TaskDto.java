@@ -1,30 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package f.project.dto;
 
-/**
- *
- * @author JOSDY
- */
 public class TaskDto {
-    
-    private int code;
+
+    private int codigo;
     private String description;
+    private String prioridad;
+    private int tiempo;
+    private String estado;
 
-    public TaskDto(int code, String description) {
-        this.code = code;
-        this.description = description;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
+    public TaskDto() {
     }
 
     public String getDescription() {
@@ -34,6 +18,37 @@ public class TaskDto {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
 }
