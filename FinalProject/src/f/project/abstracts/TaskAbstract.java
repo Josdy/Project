@@ -1,6 +1,8 @@
 package f.project.abstracts;
 
-public abstract class TaskAbstract extends ClassAbstract{
+import f.project.Interfaz.InterfazGeneral;
+
+public abstract class TaskAbstract implements InterfazGeneral{
 
     protected static final String Estado1 = "ASIGNADO";
     protected static final String Estado2 = "NO ASIGNADO";

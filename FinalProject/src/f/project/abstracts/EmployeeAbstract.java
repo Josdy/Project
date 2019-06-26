@@ -1,5 +1,7 @@
 package f.project.abstracts;
 
-public abstract class EmployeeAbstract extends ClassAbstract {
+import f.project.Interfaz.InterfazGeneral;
+
+public abstract class EmployeeAbstract implements InterfazGeneral {
 
 }

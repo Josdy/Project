@@ -45,14 +45,20 @@ public class EmployeeCtl extends EmployeeAbstract {
     }
 
     @Override
-    public boolean Eliminar(int dat) {
+    public boolean Eliminar() {
         boolean exito = false;
-        int resultado = this.Buscar(dat);
+        int resultado = this.Buscar(123);
         if (resultado >= 0) {
             arrayEmployee.remove(resultado);
             exito = true;
         }
         return exito;
+    }
+
+
+    @Override
+    public void GrabarDato() {
+      
     }
 
 }

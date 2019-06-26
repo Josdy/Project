@@ -1,10 +1,13 @@
 package f.project.view;
 
+import f.project.ctl.TaskCtl;
+
 public class TaskView extends javax.swing.JInternalFrame {
+
+    TaskCtl tas = new TaskCtl();
 
     public TaskView() {
         initComponents();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -32,8 +35,6 @@ public class TaskView extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Gestion de Tareas Diarias");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtCodetask.setEnabled(false);
         getContentPane().add(txtCodetask, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 45, 157, 30));
 
         jLabel1.setText("PRIORIDAD:");
@@ -70,23 +71,41 @@ public class TaskView extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 800, 130));
 
         btnRegisterTask.setText("Registrar");
+        btnRegisterTask.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterTaskActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnRegisterTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, -1, -1));
 
         btnUpdateTask.setText("Actualizar");
         getContentPane().add(btnUpdateTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, -1, -1));
 
         btnDeleteTask.setText("Eliminar");
+        btnDeleteTask.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteTaskActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnDeleteTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegisterTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterTaskActionPerformed
+        tas.InsertTask(123, "sfs", "sfa", 12, "sasfas");
+    }//GEN-LAST:event_btnRegisterTaskActionPerformed
+
+    private void btnDeleteTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteTaskActionPerformed
+       // tas.Eliminar();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteTaskActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeleteTask;
     private javax.swing.JButton btnRegisterTask;
     private javax.swing.JButton btnUpdateTask;
-    private javax.swing.JComboBox<String> cboTaskPriority;
+    public static javax.swing.JComboBox<String> cboTaskPriority;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -94,9 +113,9 @@ public class TaskView extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tableTask;
-    private javax.swing.JTextField txtCodetask;
-    private javax.swing.JTextField txtDescriptionTask;
-    private javax.swing.JTextField txtDescriptionTask1;
+    public static javax.swing.JTable tableTask;
+    public static javax.swing.JTextField txtCodetask;
+    public static javax.swing.JTextField txtDescriptionTask;
+    public static javax.swing.JTextField txtDescriptionTask1;
     // End of variables declaration//GEN-END:variables
 }
