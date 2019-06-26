@@ -9,7 +9,6 @@ import f.project.Interfaz.InterfazGeneral;
 public class TaskCtl extends ClassGeneral implements InterfazGeneral {
 
     private ArrayList<TaskDto> arregloTask = new ArrayList();
-    private DefaultTableModel Tabla = ((DefaultTableModel) TaskView.tableTask.getModel());
 
     public TaskCtl() {
     }
@@ -48,25 +47,26 @@ public class TaskCtl extends ClassGeneral implements InterfazGeneral {
 
     @Override
     public boolean Eliminar() {
+        DefaultTableModel Tabla = ((DefaultTableModel) TaskView.tableTask.getModel());
         boolean exito = false;
         int filaseleccionada = TaskView.tableTask.getSelectedRow();
         if (filaseleccionada == -1) {
             mensajeError("No se ha seleccionado un Alumno a Eliminar");
             return exito;
         }
-        String Dat;
-      /*  Dat = (String) Tabla.getValueAt(filaseleccionada, 0);
+        String Dat = String.valueOf(Tabla.getValueAt(filaseleccionada, 0));
         int resultado = this.Buscar(Integer.parseInt(Dat));
         if (resultado >= 0) {
             arregloTask.remove(resultado);
             Tabla.removeRow(filaseleccionada);
             exito = true;
-        }*/
+        }
         return exito;
     }
 
     @Override
     public void GrabarDato() {
+        DefaultTableModel Tabla = ((DefaultTableModel) TaskView.tableTask.getModel());
         TaskDto objTask = (TaskDto) arregloTask.get(arregloTask.size() - 1);
         Object[] fila = new Object[5];
         fila[0] = objTask.getCode();
@@ -74,6 +74,6 @@ public class TaskCtl extends ClassGeneral implements InterfazGeneral {
         fila[2] = objTask.getPriority();
         fila[3] = objTask.getTime();
         fila[4] = objTask.getStatus();
-       // Tabla.addRow(fila);
+        Tabla.addRow(fila);
     }
 }

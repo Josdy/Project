@@ -4,11 +4,11 @@ import f.project.ctl.TaskCtl;
 
 public class TaskView extends javax.swing.JInternalFrame {
 
-    TaskCtl tas = new TaskCtl();
-
     public TaskView() {
         initComponents();
     }
+
+    TaskCtl tas = new TaskCtl();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -97,7 +97,7 @@ public class TaskView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnRegisterTaskActionPerformed
 
     private void btnDeleteTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteTaskActionPerformed
-       // tas.Eliminar();
+         tas.Eliminar();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteTaskActionPerformed
 
