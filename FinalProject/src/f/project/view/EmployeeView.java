@@ -1,13 +1,18 @@
 package f.project.view;
 
 import f.project.ctl.EmployeeCtl;
+import java.awt.Color;
 
 public class EmployeeView extends javax.swing.JInternalFrame {
 
     public EmployeeView() {
         initComponents();
+        this.getContentPane().setBackground(Color.decode("#FFFFFF"));
+        jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+
     }
-    EmployeeCtl empleado = new EmployeeCtl();
+    EmployeeCtl emp= new EmployeeCtl();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -15,28 +20,27 @@ public class EmployeeView extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtCodeEmployee = new javax.swing.JTextField();
-        txtSurname = new javax.swing.JTextField();
-        txtJobTitle = new javax.swing.JTextField();
-        btnRegisterEmployee = new javax.swing.JButton();
-        btnUpdateEmployee = new javax.swing.JButton();
-        btnDeleteEmployee = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableEmployee = new javax.swing.JTable();
-        txtGrade = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtCodeEmployee = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        txtSurname = new javax.swing.JTextField();
+        txtCellphone = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtJobTitle = new javax.swing.JTextField();
+        txtGrade = new javax.swing.JTextField();
         txtSalary = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtCellphone = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnRegisterEmployee = new rojeru_san.RSButton();
+        btnUpdateEmployee = new rojeru_san.RSButton();
+        btnDeleteEmployee = new rojeru_san.RSButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -55,45 +59,10 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Gestion de Empleados");
+        setName("Employee"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("CODIGO:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
-
-        jLabel2.setText("NOMBRE:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
-
-        jLabel3.setText("APELLIDO:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
-
-        jLabel4.setText("CARGO:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, -1, -1));
-        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 292, 33));
-
-        txtCodeEmployee.setEditable(false);
-        getContentPane().add(txtCodeEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 157, 33));
-        getContentPane().add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 292, 33));
-        getContentPane().add(txtJobTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 292, 33));
-
-        btnRegisterEmployee.setText("Registrar");
-        btnRegisterEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegisterEmployeeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegisterEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
-
-        btnUpdateEmployee.setText("Actualizar");
-        getContentPane().add(btnUpdateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
-
-        btnDeleteEmployee.setText("Eliminar");
-        btnDeleteEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteEmployeeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnDeleteEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, -1));
-
+        tableEmployee.setBackground(new java.awt.Color(95, 158, 160));
         tableEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -105,41 +74,201 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         jScrollPane2.setViewportView(tableEmployee);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 850, 160));
-        getContentPane().add(txtGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 292, 33));
 
-        jLabel5.setText("GRADO:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, -1, -1));
-        getContentPane().add(txtSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 90, 33));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel6.setText("(S/.)");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, -1, -1));
+        jLabel2.setText("NOMBRE:");
 
-        jLabel7.setText("SUELDO:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, -1, -1));
+        jLabel3.setText("APELLIDO:");
 
         jLabel8.setText("TELEFONO:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
-        getContentPane().add(txtCellphone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 190, 33));
+
+        txtCodeEmployee.setEditable(false);
+
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNameKeyTyped(evt);
+            }
+        });
+
+        txtCellphone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCellphoneKeyTyped(evt);
+            }
+        });
+
+        jLabel7.setText("SUELDO:");
+
+        jLabel5.setText("GRADO:");
+
+        jLabel4.setText("CARGO:");
+
+        txtSalary.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSalaryKeyTyped(evt);
+            }
+        });
+
+        jLabel6.setText("(S/.)");
+
+        jLabel1.setText("CODIGO:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel8))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(txtSurname)
+                            .addComponent(txtCellphone))
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(31, 31, 31)
+                        .addComponent(txtCodeEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(167, 167, 167)
+                        .addComponent(jLabel4)
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtGrade, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(txtJobTitle)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel6)))))
+                .addContainerGap(310, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtCodeEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtJobTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtGrade)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel8)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addComponent(txtCellphone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))))
+        );
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 1000, 240));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 510, 60));
+        btnRegisterEmployee.setBackground(new java.awt.Color(95, 158, 160));
+        btnRegisterEmployee.setText("Registrar");
+        btnRegisterEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterEmployeeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegisterEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
+
+        btnUpdateEmployee.setBackground(new java.awt.Color(95, 158, 160));
+        btnUpdateEmployee.setText("Actualizar");
+        btnUpdateEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateEmployeeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUpdateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, -1, -1));
+
+        btnDeleteEmployee.setBackground(new java.awt.Color(95, 158, 160));
+        btnDeleteEmployee.setText("Eliminar");
+        btnDeleteEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteEmployeeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnDeleteEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterEmployeeActionPerformed
-        empleado.InsertEmployee(123, "uno", "dos", "tres", 123.50, 123, "apro");
+        // TODO add your handling code here:
+        //emp.InsertEmployee(123, txtName.getText(), txtSurname.getText(), txtJobTitle.getText(), Double.parseDouble(txtSalary.getText()), Integer.parseInt(txtCellphone.getText()), txtGrade.getText());
+        emp.InsertEmployee(123, "a", "a", "a", 1.0, 2, "a");
+
     }//GEN-LAST:event_btnRegisterEmployeeActionPerformed
 
+    private void btnUpdateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateEmployeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateEmployeeActionPerformed
+
     private void btnDeleteEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeActionPerformed
-        empleado.Eliminar();
+        // TODO add your handling code here:
+        emp.Eliminar();
+
     }//GEN-LAST:event_btnDeleteEmployeeActionPerformed
 
+    private void txtSalaryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalaryKeyTyped
+        // TODO add your handling code here:
+        if (evt.getKeyChar() < '0' || evt.getKeyChar() > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSalaryKeyTyped
+
+    private void txtCellphoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellphoneKeyTyped
+        // TODO add your handling code here:
+        if (evt.getKeyChar() < '0' || evt.getKeyChar() > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCellphoneKeyTyped
+
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && !Character.isDigit(c) || Character.isDigit(c)) {
+            evt.consume();
+        }
+
+
+    }//GEN-LAST:event_txtNameKeyTyped
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDeleteEmployee;
-    private javax.swing.JButton btnRegisterEmployee;
-    private javax.swing.JButton btnUpdateEmployee;
+    private rojeru_san.RSButton btnDeleteEmployee;
+    private rojeru_san.RSButton btnRegisterEmployee;
+    private rojeru_san.RSButton btnUpdateEmployee;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -149,7 +278,6 @@ public class EmployeeView extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

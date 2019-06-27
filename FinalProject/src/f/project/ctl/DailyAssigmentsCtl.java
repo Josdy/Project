@@ -6,7 +6,7 @@ import f.project.view.DailyAssigmentsView;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
-public class  DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral {
+public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral {
 
     private ArrayList<DailyAssigmentsDto> ArrayDaily = new ArrayList();
     private DefaultTableModel TablaDaily;

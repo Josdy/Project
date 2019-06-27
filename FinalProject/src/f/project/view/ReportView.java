@@ -5,6 +5,9 @@
  */
 package f.project.view;
 
+import java.awt.Color;
+import static javax.swing.WindowConstants.HIDE_ON_CLOSE;
+
 /**
  *
  * @author jvaldez
@@ -16,6 +19,9 @@ public class ReportView extends javax.swing.JInternalFrame {
      */
     public ReportView() {
         initComponents();
+       this.getContentPane().setBackground( Color.decode("#FFFFFF") );
+      
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         
     }
 
@@ -32,6 +38,7 @@ public class ReportView extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Reportes");
+        setName("Report"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pack();
