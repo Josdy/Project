@@ -51,7 +51,7 @@ public class TaskCtl extends ClassGeneral implements InterfazGeneral {
         boolean exito = false;
         int filaseleccionada = TaskView.tableTask.getSelectedRow();
         if (filaseleccionada == -1) {
-            mensajeError("No se ha seleccionado un Alumno a Eliminar");
+            mensajeError("No se ha seleccionado una Tarea a eliminar");
             return exito;
         }
         String Dat = String.valueOf(Tabla.getValueAt(filaseleccionada, 0));

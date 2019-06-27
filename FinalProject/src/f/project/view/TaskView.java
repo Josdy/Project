@@ -8,6 +8,8 @@ public class TaskView extends javax.swing.JInternalFrame {
     public TaskView() {
         initComponents();
         this.getContentPane().setBackground( Color.decode("#FFFFFF") );
+        jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         
         
     }
@@ -39,8 +41,11 @@ public class TaskView extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Gestion de Tareas Diarias");
+        setName("Task"); // NOI18N
 
-        tableTask.setBackground(new java.awt.Color(240, 255, 240));
+        jScrollPane2.setBackground(new java.awt.Color(95, 158, 160));
+
+        tableTask.setBackground(new java.awt.Color(95, 158, 160));
         tableTask.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -66,6 +71,12 @@ public class TaskView extends javax.swing.JInternalFrame {
         jLabel5.setText("TIEMPO:");
 
         cboTaskPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
+
+        txtDescriptionTask.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDescriptionTaskKeyTyped(evt);
+            }
+        });
 
         jLabel2.setText("NOMBRE:");
 
@@ -99,11 +110,12 @@ public class TaskView extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtCodetask, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(cboTaskPriority, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cboTaskPriority, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(txtCodetask, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -190,6 +202,11 @@ public class TaskView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         tas.Eliminar();
     }//GEN-LAST:event_btnDeleteTaskActionPerformed
+
+    private void txtDescriptionTaskKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescriptionTaskKeyTyped
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtDescriptionTaskKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnDeleteTask;

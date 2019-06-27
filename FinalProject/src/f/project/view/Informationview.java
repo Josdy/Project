@@ -5,6 +5,9 @@
  */
 package f.project.view;
 
+import java.awt.Color;
+import static javax.swing.WindowConstants.HIDE_ON_CLOSE;
+
 /**
  *
  * @author jvaldez
@@ -16,6 +19,9 @@ public class Informationview extends javax.swing.JInternalFrame {
      */
     public Informationview() {
         initComponents();
+         this.getContentPane().setBackground( Color.decode("#FFFFFF") );
+        
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         
     }
 

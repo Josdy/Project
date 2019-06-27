@@ -100,6 +100,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Empleado"/>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="name" type="java.lang.String" value="Employee" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmployeeActionPerformed"/>
@@ -120,6 +121,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tareas Diarias"/>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="name" type="java.lang.String" value="Task" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTaskActionPerformed"/>
@@ -139,6 +141,7 @@
                   <Image iconType="3" name="/f/project/image/adminrrhh.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Asignacion Carga Laboral"/>
+                <Property name="name" type="java.lang.String" value="Assigment" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDailyAssigmentsActionPerformed"/>
@@ -159,6 +162,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Reporte"/>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="name" type="java.lang.String" value="Report" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReportActionPerformed"/>
@@ -179,6 +183,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Informacion"/>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="name" type="java.lang.String" value="Information" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInformationActionPerformed"/>

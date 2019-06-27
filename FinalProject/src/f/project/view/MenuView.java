@@ -2,13 +2,14 @@ package f.project.view;
 
 import f.project.view.Informationview;
 import java.awt.Dimension;
-import java.awt.Toolkit;
+
+import javax.swing.JInternalFrame;
+import rojerusan.RSButtonIconI;
 
 public class MenuView extends javax.swing.JFrame {
 
     int height = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
     int width = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
-
 
     public MenuView() {
 
@@ -17,8 +18,7 @@ public class MenuView extends javax.swing.JFrame {
         this.setPreferredSize(new Dimension(width, height));
         BackgroundPanel.setPreferredSize(new Dimension(width, height));
         menuPanel.setPreferredSize(new Dimension(menuPanel.getWidth(), height));
-        desktop.setPreferredSize(new Dimension(width-menuPanel.getWidth(), height));
-
+        desktop.setPreferredSize(new Dimension(width - menuPanel.getWidth(), height));
 
     }
 
@@ -72,6 +72,7 @@ public class MenuView extends javax.swing.JFrame {
         btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/employee.jpg"))); // NOI18N
         btnEmployee.setText("Empleado");
         btnEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnEmployee.setName("Employee"); // NOI18N
         btnEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEmployeeActionPerformed(evt);
@@ -83,6 +84,7 @@ public class MenuView extends javax.swing.JFrame {
         btnTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/task.jpg"))); // NOI18N
         btnTask.setText("Tareas Diarias");
         btnTask.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTask.setName("Task"); // NOI18N
         btnTask.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTaskActionPerformed(evt);
@@ -93,6 +95,7 @@ public class MenuView extends javax.swing.JFrame {
         btnDailyAssigments.setBackground(new java.awt.Color(0, 86, 179));
         btnDailyAssigments.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/adminrrhh.jpg"))); // NOI18N
         btnDailyAssigments.setText("Asignacion Carga Laboral");
+        btnDailyAssigments.setName("Assigment"); // NOI18N
         btnDailyAssigments.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDailyAssigmentsActionPerformed(evt);
@@ -104,6 +107,7 @@ public class MenuView extends javax.swing.JFrame {
         btnReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/report.jpg"))); // NOI18N
         btnReport.setText("Reporte");
         btnReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnReport.setName("Report"); // NOI18N
         btnReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportActionPerformed(evt);
@@ -115,6 +119,7 @@ public class MenuView extends javax.swing.JFrame {
         btnInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/info.jpg"))); // NOI18N
         btnInformation.setText("Informacion");
         btnInformation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnInformation.setName("Information"); // NOI18N
         btnInformation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInformationActionPerformed(evt);
@@ -154,48 +159,107 @@ public class MenuView extends javax.swing.JFrame {
     private void btnInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformationActionPerformed
         // TODO add your handling code here:
         //        desktop.add(iv);
-        BackgroundPanel.add(iv);
+        
         Dimension desktopSize = BackgroundPanel.getSize();
-        Dimension FrameSize = ev.getSize();
+        Dimension FrameSize = iv.getSize();
         iv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        iv.show();
+         String name = this.btnInformation.getName();
+        win(true, name);
+
     }//GEN-LAST:event_btnInformationActionPerformed
 
     private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
         // TODO add your handling code here:
-                desktop.add(rv);
-                Dimension desktopSize = desktop.getSize();
-        Dimension FrameSize = ev.getSize();
-                rv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        rv.show();
+        
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = rv.getSize();
+        rv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+       String name = this.btnReport.getName();
+        win(true, name);
+
     }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnDailyAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyAssigmentsActionPerformed
         // TODO add your handling code here:
-                desktop.add(dav);
-                Dimension desktopSize = desktop.getSize();
-        Dimension FrameSize = ev.getSize();
-                dav.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        dav.show();
+        
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = dav.getSize();
+        dav.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        String name = this.btnDailyAssigments.getName();
+        win(true, name);
+
     }//GEN-LAST:event_btnDailyAssigmentsActionPerformed
 
     private void btnTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaskActionPerformed
         // TODO add your handling code here:
-                desktop.add(tv);
-                Dimension desktopSize = desktop.getSize();
-        Dimension FrameSize = ev.getSize();
-                tv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        tv.show();
+
+        Dimension desktopSize = desktop.getSize();
+        Dimension FrameSize = tv.getSize();
+        tv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        String name = this.btnTask.getName();
+        win(true, name);
+
+//         tv.show();
     }//GEN-LAST:event_btnTaskActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
         // TODO add your handling code here:
-                desktop.add(ev);
-                Dimension desktopSize = desktop.getSize();
+//        desktop.add(ev); 
+
+        Dimension desktopSize = desktop.getSize();
         Dimension FrameSize = ev.getSize();
-                ev.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        ev.show();
+        ev.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        String name = this.btnEmployee.getName();
+        win(true, name);
     }//GEN-LAST:event_btnEmployeeActionPerformed
+    public void win(Boolean jif, String name) {
+        if (jif) {
+            String n = name;
+            switch (name) {
+                case "Employee":
+                    desktop.removeAll();
+                    desktop.repaint();
+                    desktop.add(ev);
+                    ev.show();
+
+                    break;
+                case "Task":
+
+                    
+                    desktop.removeAll();
+                    desktop.repaint();
+                    desktop.add(tv);
+                    tv.show();
+
+                    break;
+                case "Assigment":
+//                
+                    desktop.removeAll();
+                    desktop.repaint();
+                    desktop.add(dav);
+                    dav.show();
+
+                    break;
+                case "Report":
+//                
+                    desktop.removeAll();
+                    desktop.repaint();
+                    desktop.add(rv);
+                    rv.show();
+
+                    break;
+                case "Information":
+//                
+                    desktop.removeAll();
+                    desktop.repaint();
+                    desktop.add(iv);
+                    iv.show();
+
+                    break;
+
+            }
+        }
+    }
 
     /**
      * @param args the command line arguments
