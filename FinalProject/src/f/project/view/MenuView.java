@@ -2,15 +2,26 @@ package f.project.view;
 
 import f.project.view.Informationview;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 
 public class MenuView extends javax.swing.JFrame {
 
+    int height = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+    int width = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+
+
     public MenuView() {
+
         initComponents();
-        this.setLocationRelativeTo(this);
-//          this.setExtendedState(this.MAXIMIZED_BOTH);
+        this.setExtendedState(this.MAXIMIZED_BOTH);
+        this.setPreferredSize(new Dimension(width, height));
+        BackgroundPanel.setPreferredSize(new Dimension(width, height));
+        menuPanel.setPreferredSize(new Dimension(menuPanel.getWidth(), height));
+        desktop.setPreferredSize(new Dimension(width-menuPanel.getWidth(), height));
+
 
     }
+
     public Informationview iv = new Informationview();
     public EmployeeView ev = new EmployeeView();
     public TaskView tv = new TaskView();
@@ -21,8 +32,8 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        BackgroundPanel = new javax.swing.JPanel();
+        menuPanel = new javax.swing.JPanel();
         rSPanelCircleImage1 = new rojerusan.RSPanelCircleImage();
         btnEmployee = new rojerusan.RSButtonIconI();
         btnTask = new rojerusan.RSButtonIconI();
@@ -34,12 +45,13 @@ public class MenuView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administracion de Recursos Humanos");
         setBackground(new java.awt.Color(0, 112, 192));
+        setName("principal"); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(0, 112, 192));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BackgroundPanel.setBackground(new java.awt.Color(0, 112, 192));
+        BackgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 86, 179));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        menuPanel.setBackground(new java.awt.Color(0, 86, 179));
+        menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rSPanelCircleImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/menu .jpg"))); // NOI18N
 
@@ -54,7 +66,7 @@ public class MenuView extends javax.swing.JFrame {
             .addGap(0, 150, Short.MAX_VALUE)
         );
 
-        jPanel2.add(rSPanelCircleImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 20, -1, -1));
+        menuPanel.add(rSPanelCircleImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 20, -1, -1));
 
         btnEmployee.setBackground(new java.awt.Color(0, 86, 179));
         btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/employee.jpg"))); // NOI18N
@@ -65,7 +77,7 @@ public class MenuView extends javax.swing.JFrame {
                 btnEmployeeActionPerformed(evt);
             }
         });
-        jPanel2.add(btnEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 197, 269, -1));
+        menuPanel.add(btnEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 197, 269, -1));
 
         btnTask.setBackground(new java.awt.Color(0, 86, 179));
         btnTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/task.jpg"))); // NOI18N
@@ -76,7 +88,7 @@ public class MenuView extends javax.swing.JFrame {
                 btnTaskActionPerformed(evt);
             }
         });
-        jPanel2.add(btnTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 243, 269, -1));
+        menuPanel.add(btnTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 243, 269, -1));
 
         btnDailyAssigments.setBackground(new java.awt.Color(0, 86, 179));
         btnDailyAssigments.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/adminrrhh.jpg"))); // NOI18N
@@ -86,7 +98,7 @@ public class MenuView extends javax.swing.JFrame {
                 btnDailyAssigmentsActionPerformed(evt);
             }
         });
-        jPanel2.add(btnDailyAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 289, 269, -1));
+        menuPanel.add(btnDailyAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 289, 269, -1));
 
         btnReport.setBackground(new java.awt.Color(0, 86, 179));
         btnReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/report.jpg"))); // NOI18N
@@ -97,7 +109,7 @@ public class MenuView extends javax.swing.JFrame {
                 btnReportActionPerformed(evt);
             }
         });
-        jPanel2.add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 335, 269, -1));
+        menuPanel.add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 335, 269, -1));
 
         btnInformation.setBackground(new java.awt.Color(0, 86, 179));
         btnInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/info.jpg"))); // NOI18N
@@ -108,32 +120,32 @@ public class MenuView extends javax.swing.JFrame {
                 btnInformationActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 381, 269, -1));
+        menuPanel.add(btnInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 381, 269, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 480));
+        BackgroundPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+            .addGap(0, 1060, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
-        jPanel1.add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 0, -1, 478));
+        BackgroundPanel.add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(BackgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1376, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(BackgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -141,8 +153,9 @@ public class MenuView extends javax.swing.JFrame {
 
     private void btnInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformationActionPerformed
         // TODO add your handling code here:
-        desktop.add(iv);
-        Dimension desktopSize = desktop.getSize();
+        //        desktop.add(iv);
+        BackgroundPanel.add(iv);
+        Dimension desktopSize = BackgroundPanel.getSize();
         Dimension FrameSize = ev.getSize();
         iv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         iv.show();
@@ -150,37 +163,37 @@ public class MenuView extends javax.swing.JFrame {
 
     private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
         // TODO add your handling code here:
-        desktop.add(rv);
-        Dimension desktopSize = desktop.getSize();
+                desktop.add(rv);
+                Dimension desktopSize = desktop.getSize();
         Dimension FrameSize = ev.getSize();
-        rv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+                rv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         rv.show();
     }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnDailyAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyAssigmentsActionPerformed
         // TODO add your handling code here:
-        desktop.add(dav);
-        Dimension desktopSize = desktop.getSize();
+                desktop.add(dav);
+                Dimension desktopSize = desktop.getSize();
         Dimension FrameSize = ev.getSize();
-        dav.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+                dav.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         dav.show();
     }//GEN-LAST:event_btnDailyAssigmentsActionPerformed
 
     private void btnTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaskActionPerformed
         // TODO add your handling code here:
-        desktop.add(tv);
-        Dimension desktopSize = desktop.getSize();
+                desktop.add(tv);
+                Dimension desktopSize = desktop.getSize();
         Dimension FrameSize = ev.getSize();
-        tv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+                tv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         tv.show();
     }//GEN-LAST:event_btnTaskActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
         // TODO add your handling code here:
-        desktop.add(ev);
-        Dimension desktopSize = desktop.getSize();
+                desktop.add(ev);
+                Dimension desktopSize = desktop.getSize();
         Dimension FrameSize = ev.getSize();
-        ev.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+                ev.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         ev.show();
     }//GEN-LAST:event_btnEmployeeActionPerformed
 
@@ -220,14 +233,14 @@ public class MenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BackgroundPanel;
     private rojerusan.RSButtonIconI btnDailyAssigments;
     private rojerusan.RSButtonIconI btnEmployee;
     private rojerusan.RSButtonIconI btnInformation;
     private rojerusan.RSButtonIconI btnReport;
     private rojerusan.RSButtonIconI btnTask;
     private javax.swing.JDesktopPane desktop;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel menuPanel;
     private rojerusan.RSPanelCircleImage rSPanelCircleImage1;
     // End of variables declaration//GEN-END:variables
 }
