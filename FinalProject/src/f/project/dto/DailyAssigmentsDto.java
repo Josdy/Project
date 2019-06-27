@@ -1,10 +1,15 @@
 package f.project.dto;
 
+import f.project.ctl.EmployeeCtl;
+import f.project.ctl.TaskCtl;
+
 public class DailyAssigmentsDto {
 
     private int code;
     private EmployeeDto employeeDto;
+    private EmployeeCtl employeeCtl;
     private TaskDto taskDto;
+    private TaskCtl taskCtl;
     private String taskProgress;
 
     public DailyAssigmentsDto() {
@@ -24,7 +29,14 @@ public class DailyAssigmentsDto {
 
     public void setEmployeeDto(EmployeeDto employeeDto) {
         this.employeeDto = employeeDto;
+    }
 
+    public EmployeeCtl getEmployeeCtl() {
+        return employeeCtl;
+    }
+
+    public void setEmployeeCtl(EmployeeCtl employeeCtl) {
+        this.employeeCtl = employeeCtl;
     }
 
     public TaskDto getTaskDto() {
@@ -33,6 +45,14 @@ public class DailyAssigmentsDto {
 
     public void setTaskDto(TaskDto taskDto) {
         this.taskDto = taskDto;
+    }
+
+    public TaskCtl getTaskCtl() {
+        return taskCtl;
+    }
+
+    public void setTaskCtl(TaskCtl taskCtl) {
+        this.taskCtl = taskCtl;
     }
 
     public String getTaskProgress() {

@@ -1,11 +1,13 @@
 package f.project.view;
 
+import f.project.ctl.EmployeeCtl;
+
 public class EmployeeView extends javax.swing.JInternalFrame {
 
     public EmployeeView() {
         initComponents();
-
     }
+    EmployeeCtl empleado = new EmployeeCtl();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -74,12 +76,22 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         getContentPane().add(txtJobTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 292, 33));
 
         btnRegisterEmployee.setText("Registrar");
+        btnRegisterEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterEmployeeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnRegisterEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
         btnUpdateEmployee.setText("Actualizar");
         getContentPane().add(btnUpdateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
 
         btnDeleteEmployee.setText("Eliminar");
+        btnDeleteEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteEmployeeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnDeleteEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, -1));
 
         tableEmployee.setModel(new javax.swing.table.DefaultTableModel(
@@ -116,6 +128,13 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegisterEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterEmployeeActionPerformed
+        empleado.InsertEmployee(123, "uno", "dos", "tres", 123.50, 123, "apro");
+    }//GEN-LAST:event_btnRegisterEmployeeActionPerformed
+
+    private void btnDeleteEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeActionPerformed
+        empleado.Eliminar();
+    }//GEN-LAST:event_btnDeleteEmployeeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeleteEmployee;
@@ -134,7 +153,7 @@ public class EmployeeView extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable tableEmployee;
+    public static javax.swing.JTable tableEmployee;
     private javax.swing.JTextField txtCellphone;
     private javax.swing.JTextField txtCodeEmployee;
     private javax.swing.JTextField txtGrade;

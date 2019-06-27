@@ -7,9 +7,7 @@ public class TaskView extends javax.swing.JInternalFrame {
     public TaskView() {
         initComponents();
     }
-
     TaskCtl tas = new TaskCtl();
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -97,8 +95,7 @@ public class TaskView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnRegisterTaskActionPerformed
 
     private void btnDeleteTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteTaskActionPerformed
-         tas.Eliminar();
-        // TODO add your handling code here:
+        tas.Eliminar();
     }//GEN-LAST:event_btnDeleteTaskActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

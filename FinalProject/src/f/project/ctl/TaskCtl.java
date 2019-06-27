@@ -8,7 +8,9 @@ import f.project.Interfaz.InterfazGeneral;
 
 public class TaskCtl extends ClassGeneral implements InterfazGeneral {
 
-    private ArrayList<TaskDto> arregloTask = new ArrayList();
+    public ArrayList<TaskDto> arregloTask = new ArrayList();
+    private TaskDto objTask;
+    private DefaultTableModel Tabla;
 
     public TaskCtl() {
     }
@@ -22,21 +24,25 @@ public class TaskCtl extends ClassGeneral implements InterfazGeneral {
     }
 
     public void InsertTask(int cod, String desc, String pri, int time, String est) {
-        TaskDto task = new TaskDto();
-        task.setDescription(desc);
-        task.setStatus(est);
-        task.setPriority(pri);
-        task.setTime(time);
-        task.setCode(cod);
-        arregloTask.add(task);
-        GrabarDato();//Grabo los Datos en la Tabla
+        if (Buscar(cod) < 0) {
+            TaskDto task = new TaskDto();
+            task.setDescription(desc);
+            task.setStatus(est);
+            task.setPriority(pri);
+            task.setTime(time);
+            task.setCode(cod);
+            arregloTask.add(task);
+            GrabarDato();//Grabo los Datos en la Tabla
+        } else {
+            mensajeError("El Codigo Ya ha sido Ingresado Anteriormente");
+        }
     }
 
     @Override
     public int Buscar(int cod) {
         int resultado = -1;
         for (int i = 0; i < arregloTask.size(); i++) {
-            TaskDto objTask = (TaskDto) arregloTask.get(i);
+            objTask = (TaskDto) arregloTask.get(i);
             if (objTask.getCode() == cod) {
                 resultado = i;
                 break;
@@ -47,7 +53,7 @@ public class TaskCtl extends ClassGeneral implements InterfazGeneral {
 
     @Override
     public boolean Eliminar() {
-        DefaultTableModel Tabla = ((DefaultTableModel) TaskView.tableTask.getModel());
+        Tabla = ((DefaultTableModel) TaskView.tableTask.getModel());
         boolean exito = false;
         int filaseleccionada = TaskView.tableTask.getSelectedRow();
         if (filaseleccionada == -1) {
@@ -66,8 +72,8 @@ public class TaskCtl extends ClassGeneral implements InterfazGeneral {
 
     @Override
     public void GrabarDato() {
-        DefaultTableModel Tabla = ((DefaultTableModel) TaskView.tableTask.getModel());
-        TaskDto objTask = (TaskDto) arregloTask.get(arregloTask.size() - 1);
+        Tabla = ((DefaultTableModel) TaskView.tableTask.getModel());
+        objTask = (TaskDto) arregloTask.get(arregloTask.size() - 1);
         Object[] fila = new Object[5];
         fila[0] = objTask.getCode();
         fila[1] = objTask.getDescription();
