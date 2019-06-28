@@ -46,6 +46,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                 "CODIGO", "EMPLEADO", "CARGO", "TAREA", "PROGRESO"
             }
         ));
+        tableAssignTask.setSelectionBackground(new java.awt.Color(67, 150, 209));
         jScrollPane2.setViewportView(tableAssignTask);
 
         btnRegisterDayliAssigments.setBackground(new java.awt.Color(95, 158, 160));

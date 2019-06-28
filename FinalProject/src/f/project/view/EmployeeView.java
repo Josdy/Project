@@ -2,6 +2,7 @@ package f.project.view;
 
 import f.project.ctl.EmployeeCtl;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 
 public class EmployeeView extends javax.swing.JInternalFrame {
 
@@ -10,6 +11,7 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         this.getContentPane().setBackground(Color.decode("#FFFFFF"));
         jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        
 
     }
     EmployeeCtl emp= new EmployeeCtl();
@@ -71,6 +73,7 @@ public class EmployeeView extends javax.swing.JInternalFrame {
                 "CODIGO", "NOMBRE", "APELLIDO", "TELEFONO", "CARGO", "GRADO", "SUELDO"
             }
         ));
+        tableEmployee.setSelectionBackground(new java.awt.Color(67, 150, 209));
         jScrollPane2.setViewportView(tableEmployee);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 850, 160));
@@ -87,12 +90,27 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         txtCodeEmployee.setEditable(false);
 
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNameKeyTyped(evt);
             }
         });
 
+        txtSurname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSurnameKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSurnameKeyTyped(evt);
+            }
+        });
+
         txtCellphone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCellphoneKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCellphoneKeyTyped(evt);
             }
@@ -263,6 +281,28 @@ public class EmployeeView extends javax.swing.JInternalFrame {
 
 
     }//GEN-LAST:event_txtNameKeyTyped
+
+    private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
+     
+    }//GEN-LAST:event_txtNameKeyPressed
+
+    private void txtCellphoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellphoneKeyPressed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txtCellphoneKeyPressed
+
+    private void txtSurnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSurnameKeyPressed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txtSurnameKeyPressed
+
+    private void txtSurnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSurnameKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c) && !Character.isDigit(c) || Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSurnameKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

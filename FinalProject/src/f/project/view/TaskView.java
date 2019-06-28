@@ -57,7 +57,7 @@ public class TaskView extends javax.swing.JInternalFrame {
         ));
         tableTask.setGridColor(new java.awt.Color(240, 255, 240));
         tableTask.setInheritsPopupMenu(true);
-        tableTask.setSelectionBackground(new java.awt.Color(95, 158, 160));
+        tableTask.setSelectionBackground(new java.awt.Color(67, 150, 209));
         jScrollPane2.setViewportView(tableTask);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -68,6 +68,12 @@ public class TaskView extends javax.swing.JInternalFrame {
         jLabel3.setText("CODIGO:");
 
         jLabel4.setText("(hrs.)");
+
+        txtTime.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTimeKeyTyped(evt);
+            }
+        });
 
         jLabel5.setText("TIEMPO:");
 
@@ -208,6 +214,13 @@ public class TaskView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_txtDescriptionTaskKeyTyped
+
+    private void txtTimeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimeKeyTyped
+        // TODO add your handling code here:
+        if (evt.getKeyChar() < '0' || evt.getKeyChar() > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTimeKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnDeleteTask;
