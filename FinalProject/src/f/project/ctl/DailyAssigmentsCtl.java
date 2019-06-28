@@ -26,11 +26,24 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
         this.ArrayDaily = ArrayDaily;
     }
 
+    public void loadingEmployee() {
+        Tabla = ((DefaultTableModel) EmployeeView.tableEmployee.getModel());
+        DailyAssigmentsView.cboEmployees.removeAllItems();
+        for (int i = 0; i < Tabla.getRowCount(); i++) {
+            DailyAssigmentsView.cboEmployees.addItem(String.valueOf(Tabla.getValueAt(1, i)));
+            System.out.println("da" + i);
+        }
+    }
+
+    public void loadingTask() {
+
+    }
+
     public void AsignarDaily(String progress) {
         //int opcionseleccionada = DailyAssigmentsView.cboEmployees.getSelectedIndex();
-        int opcionseleccionada = 0;
+        //int opcionseleccionada = 0;
         Tabla = ((DefaultTableModel) EmployeeView.tableEmployee.getModel());
-        System.out.println("dd"+Tabla.getRowCount());
+        System.out.println("dd" + Tabla.getRowCount());
         // employeeDto=(EmployeeDto) employeeCtl.arrayEmployee.get(opcionseleccionada);
         //  objDailyAssigments.setEmployeeDto(employeeDto);
         // DailyAssigments.setTaskDto(objDailyAssigments.getTaskCtl().arregloTask.get(opcionseleccionada));

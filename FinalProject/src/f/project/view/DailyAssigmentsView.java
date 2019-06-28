@@ -6,13 +6,16 @@ import static javax.swing.WindowConstants.HIDE_ON_CLOSE;
 
 public class DailyAssigmentsView extends javax.swing.JInternalFrame {
 
+    DailyAssigmentsCtl ct = new DailyAssigmentsCtl();
+
     public DailyAssigmentsView() {
         initComponents();
-        this.getContentPane().setBackground( Color.decode("#FFFFFF") );
+        this.getContentPane().setBackground(Color.decode("#FFFFFF"));
         jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        ct.loadingEmployee();
     }
-DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -178,7 +181,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
 
     private void btnRegisterDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterDayliAssigmentsActionPerformed
         // TODO add your handling code here:
-      ct.AsignarDaily("10");
+        ct.AsignarDaily("10");
     }//GEN-LAST:event_btnRegisterDayliAssigmentsActionPerformed
 
     private void btnUpdateDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDayliAssigmentsActionPerformed
@@ -187,7 +190,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
 
     private void btnDeleteDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDayliAssigmentsActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_btnDeleteDayliAssigmentsActionPerformed
 
 
@@ -195,8 +198,8 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
     private rojeru_san.RSButton btnDeleteDayliAssigments;
     private rojeru_san.RSButton btnRegisterDayliAssigments;
     private rojeru_san.RSButton btnUpdateDayliAssigments;
-    private javax.swing.JComboBox<String> cboEmployees;
-    private javax.swing.JComboBox<String> cboTasks;
+    public static javax.swing.JComboBox<String> cboEmployees;
+    public static javax.swing.JComboBox<String> cboTasks;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
