@@ -54,7 +54,7 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
         boolean exito = false;
         int filaseleccionada = DailyAssigmentsView.tableAssignTask.getSelectedRow();
         if (filaseleccionada == -1) {
-            mensajeError("No se ha seleccionado un Alumno a Eliminar");
+            mensajeError("No se ha seleccionado un Registro a Eliminar");
             return exito;
         }
         String Dat = String.valueOf(TablaDaily.getValueAt(filaseleccionada, 0));

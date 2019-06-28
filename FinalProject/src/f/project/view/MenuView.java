@@ -3,8 +3,6 @@ package f.project.view;
 import f.project.view.Informationview;
 import java.awt.Dimension;
 
-import javax.swing.JInternalFrame;
-import rojerusan.RSButtonIconI;
 
 public class MenuView extends javax.swing.JFrame {
 
