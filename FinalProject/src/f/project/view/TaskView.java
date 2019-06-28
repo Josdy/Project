@@ -1,20 +1,21 @@
 package f.project.view;
 
+import f.project.abstracts.TaskAbstract;
 import f.project.ctl.TaskCtl;
 import java.awt.Color;
 
 public class TaskView extends javax.swing.JInternalFrame {
+ TaskCtl tas = new TaskCtl();
 
     public TaskView() {
         initComponents();
         this.getContentPane().setBackground( Color.decode("#FFFFFF") );
         jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
-        
+        tas= new TaskCtl();
+        Priority();
         
     }
-
-    TaskCtl tas = new TaskCtl();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -225,4 +226,13 @@ public class TaskView extends javax.swing.JInternalFrame {
     public static javax.swing.JTextField txtDescriptionTask;
     public static javax.swing.JTextField txtTime;
     // End of variables declaration//GEN-END:variables
+
+    private void Priority() {
+       cboTaskPriority.removeAllItems();
+       cboTaskPriority.addItem("-Seleccionar-");
+       for(String tipo:tas.obtenerPrioridad()){
+           cboTaskPriority.addItem(tipo);
+       }
+       cboTaskPriority.setSelectedIndex(0);
+    }
 }

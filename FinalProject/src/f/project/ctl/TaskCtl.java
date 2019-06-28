@@ -5,6 +5,7 @@ import f.project.view.TaskView;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import f.project.Interfaz.InterfazGeneral;
+import f.project.abstracts.TaskAbstract;
 
 public class TaskCtl extends ClassGeneral implements InterfazGeneral {
 
@@ -82,4 +83,12 @@ public class TaskCtl extends ClassGeneral implements InterfazGeneral {
         fila[4] = objTask.getStatus();
         Tabla.addRow(fila);
     }
+     public String[] obtenerPrioridad() {
+        String tp[] = {
+            TaskAbstract.PRIORIDAD1,
+            TaskAbstract.PRIORIDAD2,
+        TaskAbstract.PRIORIDAD3};
+        return tp;
+    }
+    
 }
