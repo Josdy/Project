@@ -3,7 +3,6 @@ package f.project.view;
 import f.project.view.Informationview;
 import java.awt.Dimension;
 
-
 public class MenuView extends javax.swing.JFrame {
 
     int height = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -23,7 +22,6 @@ public class MenuView extends javax.swing.JFrame {
     public Informationview iv = new Informationview();
     public EmployeeView ev = new EmployeeView();
     public TaskView tv = new TaskView();
-    public ReportView rv = new ReportView();
     public DailyAssigmentsView dav = new DailyAssigmentsView();
 
     @SuppressWarnings("unchecked")
@@ -157,29 +155,25 @@ public class MenuView extends javax.swing.JFrame {
     private void btnInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformationActionPerformed
         // TODO add your handling code here:
         //        desktop.add(iv);
-        
+
         Dimension desktopSize = BackgroundPanel.getSize();
-        Dimension FrameSize = iv.getSize();
+        Dimension FrameSize = tv.getSize();
         iv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-         String name = this.btnInformation.getName();
+        String name = this.btnInformation.getName();
         win(true, name);
 
     }//GEN-LAST:event_btnInformationActionPerformed
 
     private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
         // TODO add your handling code here:
-        
-        Dimension desktopSize = desktop.getSize();
-        Dimension FrameSize = rv.getSize();
-        rv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-       String name = this.btnReport.getName();
-        win(true, name);
+
+       
 
     }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnDailyAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyAssigmentsActionPerformed
         // TODO add your handling code here:
-        
+
         Dimension desktopSize = desktop.getSize();
         Dimension FrameSize = dav.getSize();
         dav.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
@@ -223,7 +217,6 @@ public class MenuView extends javax.swing.JFrame {
                     break;
                 case "Task":
 
-                    
                     desktop.removeAll();
                     desktop.repaint();
                     desktop.add(tv);
@@ -238,14 +231,7 @@ public class MenuView extends javax.swing.JFrame {
                     dav.show();
 
                     break;
-                case "Report":
-//                
-                    desktop.removeAll();
-                    desktop.repaint();
-                    desktop.add(rv);
-                    rv.show();
 
-                    break;
                 case "Information":
 //                
                     desktop.removeAll();

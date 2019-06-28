@@ -34,16 +34,23 @@ public class Informationview extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rSPanelImage1 = new rojerusan.RSPanelImage();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Informacion");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        rSPanelImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/infopanel..jpg"))); // NOI18N
+        rSPanelImage1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(rSPanelImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 500));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSPanelImage rSPanelImage1;
     // End of variables declaration//GEN-END:variables
 }
