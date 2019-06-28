@@ -1,5 +1,6 @@
 package f.project.view;
 
+import f.project.ctl.DailyAssigmentsCtl;
 import java.awt.Color;
 import static javax.swing.WindowConstants.HIDE_ON_CLOSE;
 
@@ -11,7 +12,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
         jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
-
+DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -177,7 +178,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
 
     private void btnRegisterDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterDayliAssigmentsActionPerformed
         // TODO add your handling code here:
-      
+      ct.AsignarDaily("10");
     }//GEN-LAST:event_btnRegisterDayliAssigmentsActionPerformed
 
     private void btnUpdateDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDayliAssigmentsActionPerformed

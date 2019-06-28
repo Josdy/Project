@@ -5,11 +5,13 @@ import f.project.dto.DailyAssigmentsDto;
 import f.project.view.DailyAssigmentsView;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import f.project.view.EmployeeView;
 
 public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral {
 
     private ArrayList<DailyAssigmentsDto> ArrayDaily = new ArrayList();
     private DefaultTableModel TablaDaily;
+    private DefaultTableModel Tabla;
     private DailyAssigmentsDto objDailyAssigments;
     private EmployeeCtl employeeCtl;
 
@@ -27,6 +29,8 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
     public void AsignarDaily(String progress) {
         //int opcionseleccionada = DailyAssigmentsView.cboEmployees.getSelectedIndex();
         int opcionseleccionada = 0;
+        Tabla = ((DefaultTableModel) EmployeeView.tableEmployee.getModel());
+        System.out.println("dd"+Tabla.getRowCount());
         // employeeDto=(EmployeeDto) employeeCtl.arrayEmployee.get(opcionseleccionada);
         //  objDailyAssigments.setEmployeeDto(employeeDto);
         // DailyAssigments.setTaskDto(objDailyAssigments.getTaskCtl().arregloTask.get(opcionseleccionada));

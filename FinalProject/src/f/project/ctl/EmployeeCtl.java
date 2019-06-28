@@ -25,21 +25,21 @@ public class EmployeeCtl extends ClassGeneral implements InterfazGeneral {
     }
 
     public void InsertEmployee(int cod, String nom, String ape, String job, Double sue, int tel, String gra) {
-        // arrayEmployee = new ArrayList();
-        //  if (Buscar(cod) < 0) {
-        EmployeeDto Employee = new EmployeeDto();
-        Employee.setCode(cod);
-        Employee.setName(nom);
-        Employee.setSurname(ape);
-        Employee.setJobTitle(job);
-        Employee.setSalary(sue);
-        Employee.setCellphone(tel);
-        Employee.setGrade(gra);
-        arrayEmployee.add(Employee);
-        GrabarDato();//Grabo los Datos en la Tabla
-        /* } else {
+        arrayEmployee = new ArrayList();
+        if (Buscar(cod) < 0) {
+            EmployeeDto Employee = new EmployeeDto();
+            Employee.setCode(cod);
+            Employee.setName(nom);
+            Employee.setSurname(ape);
+            Employee.setJobTitle(job);
+            Employee.setSalary(sue);
+            Employee.setCellphone(tel);
+            Employee.setGrade(gra);
+            arrayEmployee.add(Employee);
+            GrabarDato();//Grabo los Datos en la Tabla
+        } else {
             mensajeError("El Codigo Ya ha sido Ingresado Anteriormente");
-        }*/
+        }
     }
 
     @Override
