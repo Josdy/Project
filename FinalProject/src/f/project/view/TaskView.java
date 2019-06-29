@@ -29,7 +29,7 @@ public class TaskView extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         txtTime = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        cboTaskPriority = new javax.swing.JComboBox<String>();
+        cboTaskPriority = new javax.swing.JComboBox<>();
         txtDescriptionTask = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtCodetask = new javax.swing.JTextField();
@@ -59,7 +59,7 @@ public class TaskView extends javax.swing.JInternalFrame {
         tableTask.setSelectionBackground(new java.awt.Color(67, 150, 209));
         jScrollPane2.setViewportView(tableTask);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 350, 970, 250));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 970, 250));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -78,7 +78,7 @@ public class TaskView extends javax.swing.JInternalFrame {
 
         jLabel5.setText("TIEMPO:");
 
-        cboTaskPriority.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
+        cboTaskPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
 
         txtDescriptionTask.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -87,6 +87,12 @@ public class TaskView extends javax.swing.JInternalFrame {
         });
 
         jLabel2.setText("NOMBRE:");
+
+        txtCodetask.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodetaskKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,7 +118,7 @@ public class TaskView extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4))
                     .addComponent(cboTaskPriority, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +140,7 @@ public class TaskView extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 970, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 940, -1));
 
         btnRegisterTask.setBackground(new java.awt.Color(95, 158, 160));
         btnRegisterTask.setText("Registrar");
@@ -143,7 +149,7 @@ public class TaskView extends javax.swing.JInternalFrame {
                 btnRegisterTaskActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegisterTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 131, -1));
+        getContentPane().add(btnRegisterTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 131, -1));
 
         btnDeleteTask.setBackground(new java.awt.Color(95, 158, 160));
         btnDeleteTask.setText("Eliminar");
@@ -152,15 +158,22 @@ public class TaskView extends javax.swing.JInternalFrame {
                 btnDeleteTaskActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDeleteTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 131, -1));
+        getContentPane().add(btnDeleteTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 230, 131, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterTaskActionPerformed
         // TODO add your handling code here:
-        tas.InsertTask(12, "sas", "dd", 34, "fff");
-       // tas.InsertTask(123, txtDescriptionTask.getText(), cboTaskPriority.getSelectedItem().toString(), Integer.parseInt(txtTime.getText()), "abc");
+       try {
+            tas.InsertTask(Integer.parseInt(txtCodetask.getText()), String.valueOf(txtDescriptionTask.getText()), String.valueOf(cboTaskPriority.getSelectedItem()), Integer.parseInt(txtTime.getText()), "NO ASIGNADO");
+        } catch (Exception e) {
+
+        }
+       txtCodetask.setText("");
+       txtDescriptionTask.setText("");
+       txtTime.setText("");
+       cboTaskPriority.setSelectedIndex(0);
     }//GEN-LAST:event_btnRegisterTaskActionPerformed
 
     private void btnDeleteTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteTaskActionPerformed
@@ -179,6 +192,13 @@ public class TaskView extends javax.swing.JInternalFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtTimeKeyTyped
+
+    private void txtCodetaskKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodetaskKeyTyped
+        // TODO add your handling code here:
+          if (evt.getKeyChar() < '0' || evt.getKeyChar() > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCodetaskKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnDeleteTask;

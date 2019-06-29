@@ -20,6 +20,9 @@ public class DailyAssigmentsDao {
     private DefaultTableModel TablaTask;
 
     public void loadEmployee() {
+        DailyAssigmentsView.cboEmployees.removeAllItems();
+
+        DailyAssigmentsView.cboEmployees.addItem("SELECCIONAR EMPLEADO");
         TablaEmployee = ((DefaultTableModel) EmployeeView.tableEmployee.getModel());
         for (int i = 0; i < TablaEmployee.getRowCount(); i++) {
             String name = String.valueOf(TablaEmployee.getValueAt(i, 1));
@@ -29,6 +32,8 @@ public class DailyAssigmentsDao {
     }
 
     public void loadTask() {
+        DailyAssigmentsView.cboTasks.removeAllItems();
+        DailyAssigmentsView.cboTasks.addItem("SELECCIONAR TAREA");
         TablaTask = ((DefaultTableModel) TaskView.tableTask.getModel());
         for (int i = 0; i < TablaTask.getRowCount(); i++) {
             String TaskAsignar = String.valueOf(TablaTask.getValueAt(i, 1));

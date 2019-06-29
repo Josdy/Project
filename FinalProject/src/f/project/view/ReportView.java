@@ -34,6 +34,11 @@ public class ReportView extends javax.swing.JInternalFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(95, 158, 160));
 
+        tableTask = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex,int colIndex){
+                return false;
+            }
+        };
         tableTask.setBackground(new java.awt.Color(95, 158, 160));
         tableTask.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -48,7 +53,7 @@ public class ReportView extends javax.swing.JInternalFrame {
         tableTask.setSelectionBackground(new java.awt.Color(67, 150, 209));
         jScrollPane2.setViewportView(tableTask);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 1140, 520));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 890, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

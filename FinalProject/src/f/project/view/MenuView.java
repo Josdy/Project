@@ -6,11 +6,16 @@ import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 public class MenuView extends javax.swing.JFrame {
 
     int height = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
     int width = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+
+    DefaultTableModel Tabla;
+    DefaultTableModel Tablatarea;
+    DefaultTableModel Tablatask;
 
     public MenuView() {
 
@@ -160,7 +165,7 @@ public class MenuView extends javax.swing.JFrame {
     private void btnInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformationActionPerformed
         // TODO add your handling code here:
 
-        Dimension desktopSize = BackgroundPanel.getSize();
+        Dimension desktopSize = desktop.getSize();
         Dimension FrameSize = iv.getSize();
         iv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         String name = this.btnInformation.getName();
@@ -171,7 +176,9 @@ public class MenuView extends javax.swing.JFrame {
 
     private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
         // TODO add your handling code here:
-
+        Tabla = ((DefaultTableModel) ReportView.tableTask.getModel());
+        Tablatarea = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
+        Tablatask = ((DefaultTableModel) TaskView.tableTask.getModel());
         String name = this.btnReport.getName();
         win(true, name);
         try {
@@ -179,13 +186,34 @@ public class MenuView extends javax.swing.JFrame {
         } catch (PropertyVetoException ex) {
             Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        for (int i = 0; i < Tabla.getRowCount(); i++) {
+            Tabla.removeRow(i);
+        }
+        for (int i = 0; i < Tablatarea.getRowCount(); i++) {
+            String tarea = String.valueOf(Tablatarea.getValueAt(i, 3));
+            int prog = Integer.parseInt(String.valueOf(Tablatarea.getValueAt(i, 4)));
+            if (prog == 100) {
+                for (int j = 0; j < Tablatask.getRowCount(); j++) {
+                    if (tarea.equalsIgnoreCase(String.valueOf(Tablatask.getValueAt(j, 1)))) {
+                        System.out.println("vl" + Tablatask.getValueAt(j, 1));
+                        Object[] fila = new Object[5];
+                        fila[0] = Tablatarea.getRowCount();
+                        fila[1] = Tablatarea.getValueAt(i, 1);
+                        fila[2] = Tablatarea.getValueAt(i, 3);
+                        fila[3] = Tablatask.getValueAt(i, 2);
+                        fila[4] = Tablatask.getValueAt(i, 3);
+                        Tabla.addRow(fila);
+                        break;
+                    }
+                }
+            }
+        }
 
     }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnDailyAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyAssigmentsActionPerformed
         // TODO add your handling code here:
-         DailyAssigmentsDao Dai=new DailyAssigmentsDao();
+        DailyAssigmentsDao Dai = new DailyAssigmentsDao();
         String name = this.btnDailyAssigments.getName();
         win(true, name);
         try {

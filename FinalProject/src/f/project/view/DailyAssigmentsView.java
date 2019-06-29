@@ -26,9 +26,9 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
         btnDeleteDayliAssigments = new rojeru_san.RSButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        cboTasks = new javax.swing.JComboBox<String>();
+        cboTasks = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        cboEmployees = new javax.swing.JComboBox<String>();
+        cboEmployees = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
@@ -55,7 +55,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
         tableAssignTask.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tableAssignTask);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 1140, 238));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 790, 238));
 
         btnRegisterDayliAssigments.setBackground(new java.awt.Color(95, 158, 160));
         btnRegisterDayliAssigments.setText("Registrar");
@@ -64,7 +64,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                 btnRegisterDayliAssigmentsActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegisterDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 160, -1));
+        getContentPane().add(btnRegisterDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 160, -1));
 
         btnUpdateDayliAssigments.setBackground(new java.awt.Color(95, 158, 160));
         btnUpdateDayliAssigments.setText("Actualizar");
@@ -73,7 +73,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                 btnUpdateDayliAssigmentsActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdateDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 310, 150, -1));
+        getContentPane().add(btnUpdateDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 150, -1));
 
         btnDeleteDayliAssigments.setBackground(new java.awt.Color(95, 158, 160));
         btnDeleteDayliAssigments.setText("Eliminar");
@@ -82,18 +82,18 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                 btnDeleteDayliAssigmentsActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDeleteDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 310, 160, -1));
+        getContentPane().add(btnDeleteDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 160, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setText("TAREA:");
 
-        cboTasks.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
+        cboTasks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
 
         jLabel1.setText("EMPLEADO:");
 
-        cboEmployees.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
+        cboEmployees.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,7 +108,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cboEmployees, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cboTasks, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,13 +127,15 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 750, 163));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 750, 163));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterDayliAssigmentsActionPerformed
         ct.AsignarDaily();
+        cboEmployees.setSelectedIndex(0);
+        cboTasks.setSelectedIndex(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegisterDayliAssigmentsActionPerformed
 
