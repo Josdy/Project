@@ -48,10 +48,10 @@ public class MenuView extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 112, 192));
         setName("principal"); // NOI18N
 
-        BackgroundPanel.setBackground(new java.awt.Color(0, 112, 192));
+        BackgroundPanel.setBackground(new java.awt.Color(14, 102, 85));
         BackgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuPanel.setBackground(new java.awt.Color(0, 86, 179));
+        menuPanel.setBackground(new java.awt.Color(17, 120, 100));
         menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         rSPanelCircleImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/teamwork (2).png"))); // NOI18N
@@ -69,7 +69,7 @@ public class MenuView extends javax.swing.JFrame {
 
         menuPanel.add(rSPanelCircleImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
-        btnEmployee.setBackground(new java.awt.Color(0, 86, 179));
+        btnEmployee.setBackground(new java.awt.Color(17, 120, 100));
         btnEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/employee.png"))); // NOI18N
         btnEmployee.setText("Empleado");
         btnEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -79,9 +79,9 @@ public class MenuView extends javax.swing.JFrame {
                 btnEmployeeActionPerformed(evt);
             }
         });
-        menuPanel.add(btnEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 269, 40));
+        menuPanel.add(btnEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 270, 50));
 
-        btnTask.setBackground(new java.awt.Color(0, 86, 179));
+        btnTask.setBackground(new java.awt.Color(17, 120, 100));
         btnTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/completed-task.png"))); // NOI18N
         btnTask.setText("Tareas Diarias");
         btnTask.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -91,9 +91,9 @@ public class MenuView extends javax.swing.JFrame {
                 btnTaskActionPerformed(evt);
             }
         });
-        menuPanel.add(btnTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 270, -1));
+        menuPanel.add(btnTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 270, 50));
 
-        btnDailyAssigments.setBackground(new java.awt.Color(0, 86, 179));
+        btnDailyAssigments.setBackground(new java.awt.Color(17, 120, 100));
         btnDailyAssigments.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/management.png"))); // NOI18N
         btnDailyAssigments.setText("Asignacion Carga Laboral");
         btnDailyAssigments.setName("Assigment"); // NOI18N
@@ -102,9 +102,9 @@ public class MenuView extends javax.swing.JFrame {
                 btnDailyAssigmentsActionPerformed(evt);
             }
         });
-        menuPanel.add(btnDailyAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 269, 40));
+        menuPanel.add(btnDailyAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 270, 50));
 
-        btnReport.setBackground(new java.awt.Color(0, 86, 179));
+        btnReport.setBackground(new java.awt.Color(17, 120, 100));
         btnReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/report.png"))); // NOI18N
         btnReport.setText("Reporte");
         btnReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -114,9 +114,9 @@ public class MenuView extends javax.swing.JFrame {
                 btnReportActionPerformed(evt);
             }
         });
-        menuPanel.add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 269, -1));
+        menuPanel.add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 270, 50));
 
-        btnInformation.setBackground(new java.awt.Color(0, 86, 179));
+        btnInformation.setBackground(new java.awt.Color(17, 120, 100));
         btnInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/f/project/image/information.png"))); // NOI18N
         btnInformation.setText("Informacion");
         btnInformation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -126,9 +126,9 @@ public class MenuView extends javax.swing.JFrame {
                 btnInformationActionPerformed(evt);
             }
         });
-        menuPanel.add(btnInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 269, -1));
+        menuPanel.add(btnInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 270, 50));
 
-        BackgroundPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        BackgroundPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
@@ -161,7 +161,7 @@ public class MenuView extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         Dimension desktopSize = BackgroundPanel.getSize();
-        Dimension FrameSize = dav.getSize();
+        Dimension FrameSize = iv.getSize();
         iv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         String name = this.btnInformation.getName();
         win(true, name);
