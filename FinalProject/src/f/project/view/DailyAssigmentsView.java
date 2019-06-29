@@ -11,6 +11,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
         this.getContentPane().setBackground( Color.decode("#FFFFFF") );
         jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        
     }
 DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
     @SuppressWarnings("unchecked")

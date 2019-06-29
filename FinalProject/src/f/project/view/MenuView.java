@@ -2,6 +2,9 @@ package f.project.view;
 
 import f.project.view.Informationview;
 import java.awt.Dimension;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MenuView extends javax.swing.JFrame {
 
@@ -22,6 +25,7 @@ public class MenuView extends javax.swing.JFrame {
     public Informationview iv = new Informationview();
     public EmployeeView ev = new EmployeeView();
     public TaskView tv = new TaskView();
+    public ReportView rv = new ReportView();
     public DailyAssigmentsView dav = new DailyAssigmentsView();
 
     @SuppressWarnings("unchecked")
@@ -166,43 +170,48 @@ public class MenuView extends javax.swing.JFrame {
 
     private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
         // TODO add your handling code here:
+        Dimension desktopSize = BackgroundPanel.getSize();
+        Dimension FrameSize = rv.getSize();
+        rv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        String name = this.btnInformation.getName();
+        win(true, name);
 
-       
 
     }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnDailyAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyAssigmentsActionPerformed
         // TODO add your handling code here:
-
-        Dimension desktopSize = desktop.getSize();
-        Dimension FrameSize = dav.getSize();
-        dav.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         String name = this.btnDailyAssigments.getName();
         win(true, name);
+        try {
+            dav.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_btnDailyAssigmentsActionPerformed
 
     private void btnTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaskActionPerformed
         // TODO add your handling code here:
-
-        Dimension desktopSize = desktop.getSize();
-        Dimension FrameSize = tv.getSize();
-        tv.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         String name = this.btnTask.getName();
         win(true, name);
-
-//         tv.show();
+        try {
+            tv.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnTaskActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
         // TODO add your handling code here:
-//        desktop.add(ev); 
-
-        Dimension desktopSize = desktop.getSize();
-        Dimension FrameSize = ev.getSize();
-        ev.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         String name = this.btnEmployee.getName();
         win(true, name);
+
+        try {
+            ev.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEmployeeActionPerformed
     public void win(Boolean jif, String name) {
         if (jif) {
@@ -237,7 +246,26 @@ public class MenuView extends javax.swing.JFrame {
                     desktop.removeAll();
                     desktop.repaint();
                     desktop.add(iv);
+                    try {
+                        iv.setMaximum(true);
+                    } catch (PropertyVetoException ex) {
+                        Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     iv.show();
+
+                    break;
+
+                case "Report":
+//                
+                    desktop.removeAll();
+                    desktop.repaint();
+                    desktop.add(rv);
+                    try {
+                        rv.setMaximum(true);
+                    } catch (PropertyVetoException ex) {
+                        Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    rv.show();
 
                     break;
 

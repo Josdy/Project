@@ -2,7 +2,6 @@ package f.project.view;
 
 import f.project.ctl.EmployeeCtl;
 import java.awt.Color;
-import java.awt.event.KeyEvent;
 
 public class EmployeeView extends javax.swing.JInternalFrame {
 
@@ -11,6 +10,7 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         this.getContentPane().setBackground(Color.decode("#FFFFFF"));
         jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+   
         
 
     }
