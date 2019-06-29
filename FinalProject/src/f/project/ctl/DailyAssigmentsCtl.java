@@ -98,7 +98,7 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
         int inputprogress = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su progreso"));
         int indxselect = DailyAssigmentsView.tableAssignTask.getSelectedRow();
         int resultado = this.Buscar(indxselect);
-        if (resultado >= 0) {
+        if (resultado >= 0) {      
             objDailyAssigments = (DailyAssigmentsDto) ArrayDaily.get(ArrayDaily.size() - 1);
             TablaDaily.setValueAt(inputprogress, resultado, 4);
             Object[] fila = new Object[5];
