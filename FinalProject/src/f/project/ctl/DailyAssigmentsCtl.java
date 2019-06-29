@@ -39,7 +39,7 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
         String tarea = String.valueOf(TaskView.tableTask.getValueAt(indexcomboTask, 4));
         //ArrayDaily = new ArrayList();
         DailyAssigmentsDto DailyData = new DailyAssigmentsDto();
-        DailyData.setCode(TablaDaily.getRowCount() + 1);
+        DailyData.setCode(TablaDaily.getRowCount());
         DailyData.setNameEmployeeDaily(String.valueOf(datsurnameEmployee + datnameEmployee));
         DailyData.setCargoEmployeeDaily(datCargo);
         DailyData.setNameTaskDaily(tarea);
@@ -85,7 +85,7 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
         TablaDaily = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
         objDailyAssigments = (DailyAssigmentsDto) ArrayDaily.get(ArrayDaily.size() - 1);
         Object[] fila = new Object[5];
-        fila[0] = objDailyAssigments.getCode();
+        fila[0] = objDailyAssigments.getCode()+1;
         fila[1] = objDailyAssigments.getNameEmployeeDaily();
         fila[2] = objDailyAssigments.getCargoEmployeeDaily();
         fila[3] = objDailyAssigments.getNameTaskDaily();
