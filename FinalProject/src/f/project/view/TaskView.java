@@ -40,9 +40,9 @@ public class TaskView extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
         setTitle("Gestion de Tareas Diarias");
         setName("Task"); // NOI18N
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane2.setBackground(new java.awt.Color(95, 158, 160));
 
@@ -59,6 +59,8 @@ public class TaskView extends javax.swing.JInternalFrame {
         tableTask.setInheritsPopupMenu(true);
         tableTask.setSelectionBackground(new java.awt.Color(67, 150, 209));
         jScrollPane2.setViewportView(tableTask);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 350, 970, 250));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -111,7 +113,7 @@ public class TaskView extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4))
                     .addComponent(cboTaskPriority, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +135,8 @@ public class TaskView extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20))
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 970, -1));
+
         btnRegisterTask.setBackground(new java.awt.Color(95, 158, 160));
         btnRegisterTask.setText("Registrar");
         btnRegisterTask.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +144,7 @@ public class TaskView extends javax.swing.JInternalFrame {
                 btnRegisterTaskActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegisterTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 131, -1));
 
         btnUpdateTask.setBackground(new java.awt.Color(95, 158, 160));
         btnUpdateTask.setText("Actualizar");
@@ -148,6 +153,7 @@ public class TaskView extends javax.swing.JInternalFrame {
                 btnUpdateTaskActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUpdateTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 131, -1));
 
         btnDeleteTask.setBackground(new java.awt.Color(95, 158, 160));
         btnDeleteTask.setText("Eliminar");
@@ -156,42 +162,7 @@ public class TaskView extends javax.swing.JInternalFrame {
                 btnDeleteTaskActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegisterTask, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(btnUpdateTask, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(btnDeleteTask, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(240, 240, 240))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegisterTask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUpdateTask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteTask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        getContentPane().add(btnDeleteTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 131, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

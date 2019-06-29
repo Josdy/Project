@@ -35,9 +35,9 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
         setTitle("Gestion de Asignacion de Tareas Diarias");
         setName("Assigment"); // NOI18N
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tableAssignTask.setBackground(new java.awt.Color(95, 158, 160));
         tableAssignTask.setModel(new javax.swing.table.DefaultTableModel(
@@ -51,6 +51,8 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
         tableAssignTask.setSelectionBackground(new java.awt.Color(67, 150, 209));
         jScrollPane2.setViewportView(tableAssignTask);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 1140, 238));
+
         btnRegisterDayliAssigments.setBackground(new java.awt.Color(95, 158, 160));
         btnRegisterDayliAssigments.setText("Registrar");
         btnRegisterDayliAssigments.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +60,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
                 btnRegisterDayliAssigmentsActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegisterDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 160, -1));
 
         btnUpdateDayliAssigments.setBackground(new java.awt.Color(95, 158, 160));
         btnUpdateDayliAssigments.setText("Actualizar");
@@ -66,6 +69,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
                 btnUpdateDayliAssigmentsActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUpdateDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 310, 150, -1));
 
         btnDeleteDayliAssigments.setBackground(new java.awt.Color(95, 158, 160));
         btnDeleteDayliAssigments.setText("Eliminar");
@@ -74,6 +78,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
                 btnDeleteDayliAssigmentsActionPerformed(evt);
             }
         });
+        getContentPane().add(btnDeleteDayliAssigments, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 310, 160, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -97,7 +102,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addGap(190, 190, 190)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
@@ -111,7 +116,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(cboEmployees, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cboTasks, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,44 +140,7 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
                 .addGap(36, 36, 36))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(28, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(btnRegisterDayliAssigments, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74)
-                        .addComponent(btnUpdateDayliAssigments, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDeleteDayliAssigments, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnRegisterDayliAssigments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnUpdateDayliAssigments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnDeleteDayliAssigments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 750, 163));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

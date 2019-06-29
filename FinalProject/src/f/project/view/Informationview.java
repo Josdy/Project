@@ -23,6 +23,7 @@ public class Informationview extends javax.swing.JInternalFrame {
         
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         
+        
     }
 
     /**
@@ -37,8 +38,6 @@ public class Informationview extends javax.swing.JInternalFrame {
         rSPanelImage1 = new rojerusan.RSPanelImage();
 
         setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
         setTitle("Informacion");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -51,6 +50,6 @@ public class Informationview extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojerusan.RSPanelImage rSPanelImage1;
+    public rojerusan.RSPanelImage rSPanelImage1;
     // End of variables declaration//GEN-END:variables
 }
