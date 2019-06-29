@@ -6,10 +6,10 @@ import f.project.ctl.TaskCtl;
 public class DailyAssigmentsDto {
 
     private int code;
-    private EmployeeDto employeeDto;
-    private EmployeeCtl employeeCtl;
-    private TaskDto taskDto;
-    private TaskCtl taskCtl;
+    private String nameEmployeeDaily;
+    private String cargoEmployeeDaily;
+    private String nameTaskDaily;
+    private String progressTaskDaily;
     private String taskProgress;
 
     public DailyAssigmentsDto() {
@@ -23,36 +23,36 @@ public class DailyAssigmentsDto {
         this.code = code;
     }
 
-    public EmployeeDto getEmployeeDto() {
-        return employeeDto;
+    public String getNameEmployeeDaily() {
+        return nameEmployeeDaily;
     }
 
-    public void setEmployeeDto(EmployeeDto employeeDto) {
-        this.employeeDto = employeeDto;
+    public void setNameEmployeeDaily(String nameEmployeeDaily) {
+        this.nameEmployeeDaily = nameEmployeeDaily;
     }
 
-    public EmployeeCtl getEmployeeCtl() {
-        return employeeCtl;
+    public String getCargoEmployeeDaily() {
+        return cargoEmployeeDaily;
     }
 
-    public void setEmployeeCtl(EmployeeCtl employeeCtl) {
-        this.employeeCtl = employeeCtl;
+    public void setCargoEmployeeDaily(String cargoEmployeeDaily) {
+        this.cargoEmployeeDaily = cargoEmployeeDaily;
     }
 
-    public TaskDto getTaskDto() {
-        return taskDto;
+    public String getNameTaskDaily() {
+        return nameTaskDaily;
     }
 
-    public void setTaskDto(TaskDto taskDto) {
-        this.taskDto = taskDto;
+    public void setNameTaskDaily(String nameTaskDaily) {
+        this.nameTaskDaily = nameTaskDaily;
     }
 
-    public TaskCtl getTaskCtl() {
-        return taskCtl;
+    public String getProgressTaskDaily() {
+        return progressTaskDaily;
     }
 
-    public void setTaskCtl(TaskCtl taskCtl) {
-        this.taskCtl = taskCtl;
+    public void setProgressTaskDaily(String progressTaskDaily) {
+        this.progressTaskDaily = progressTaskDaily;
     }
 
     public String getTaskProgress() {

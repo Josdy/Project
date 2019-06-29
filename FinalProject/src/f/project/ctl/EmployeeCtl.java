@@ -25,7 +25,7 @@ public class EmployeeCtl extends ClassGeneral implements InterfazGeneral {
     }
 
     public void InsertEmployee(int cod, String nom, String ape, String job, Double sue, int tel, String gra) {
-        arrayEmployee = new ArrayList();
+        //arrayEmployee = new ArrayList();
         if (Buscar(cod) < 0) {
             EmployeeDto Employee = new EmployeeDto();
             Employee.setCode(cod);

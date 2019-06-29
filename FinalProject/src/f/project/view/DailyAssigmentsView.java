@@ -8,12 +8,13 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
 
     public DailyAssigmentsView() {
         initComponents();
-        this.getContentPane().setBackground( Color.decode("#FFFFFF") );
+        this.getContentPane().setBackground(Color.decode("#FFFFFF"));
         jScrollPane2.getViewport().setBackground(Color.decode("#f0fff0"));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
-        
+
     }
-DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
+    DailyAssigmentsCtl ct = new DailyAssigmentsCtl();
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -146,17 +147,18 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterDayliAssigmentsActionPerformed
+        ct.AsignarDaily();
         // TODO add your handling code here:
-      ct.AsignarDaily("10");
     }//GEN-LAST:event_btnRegisterDayliAssigmentsActionPerformed
 
     private void btnUpdateDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDayliAssigmentsActionPerformed
+        ct.actualizar();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateDayliAssigmentsActionPerformed
 
     private void btnDeleteDayliAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDayliAssigmentsActionPerformed
         // TODO add your handling code here:
-        
+        ct.Eliminar();
     }//GEN-LAST:event_btnDeleteDayliAssigmentsActionPerformed
 
 

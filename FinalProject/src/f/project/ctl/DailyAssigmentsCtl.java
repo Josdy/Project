@@ -2,10 +2,13 @@ package f.project.ctl;
 
 import f.project.Interfaz.InterfazGeneral;
 import f.project.dto.DailyAssigmentsDto;
+import f.project.dto.EmployeeDto;
 import f.project.view.DailyAssigmentsView;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import f.project.view.EmployeeView;
+import f.project.view.TaskView;
+import javax.swing.JOptionPane;
 
 public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral {
 
@@ -26,17 +29,23 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
         this.ArrayDaily = ArrayDaily;
     }
 
-    public void AsignarDaily(String progress) {
-        //int opcionseleccionada = DailyAssigmentsView.cboEmployees.getSelectedIndex();
-        int opcionseleccionada = 0;
-        Tabla = ((DefaultTableModel) EmployeeView.tableEmployee.getModel());
-        System.out.println("dd"+Tabla.getRowCount());
-        // employeeDto=(EmployeeDto) employeeCtl.arrayEmployee.get(opcionseleccionada);
-        //  objDailyAssigments.setEmployeeDto(employeeDto);
-        // DailyAssigments.setTaskDto(objDailyAssigments.getTaskCtl().arregloTask.get(opcionseleccionada));
-        // DailyAssigments.setTaskProgress(progress);
-        //  ArrayDaily.add(DailyAssigments);
-        //  GrabarDato();//Grabo los Datos en la Tabla
+    public void AsignarDaily() {
+        TablaDaily = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
+        int indexcomboEmployee = DailyAssigmentsView.cboEmployees.getSelectedIndex() - 1;
+        int indexcomboTask = DailyAssigmentsView.cboTasks.getSelectedIndex() - 1;
+        String datnameEmployee = String.valueOf(EmployeeView.tableEmployee.getValueAt(indexcomboEmployee, 1));
+        String datsurnameEmployee = String.valueOf(EmployeeView.tableEmployee.getValueAt(indexcomboEmployee, 2));
+        String datCargo = String.valueOf(EmployeeView.tableEmployee.getValueAt(indexcomboEmployee, 4));
+        String tarea = String.valueOf(TaskView.tableTask.getValueAt(indexcomboTask, 4));
+        //ArrayDaily = new ArrayList();
+        DailyAssigmentsDto DailyData = new DailyAssigmentsDto();
+        DailyData.setCode(TablaDaily.getRowCount() + 1);
+        DailyData.setNameEmployeeDaily(String.valueOf(datsurnameEmployee + datnameEmployee));
+        DailyData.setCargoEmployeeDaily(datCargo);
+        DailyData.setNameTaskDaily(tarea);
+        DailyData.setTaskProgress("0");
+        ArrayDaily.add(DailyData);
+        GrabarDato();//Grabo los Datos en la Tabla
     }
 
     @Override
@@ -73,13 +82,32 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
 
     @Override
     public void GrabarDato() {
+        TablaDaily = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
         objDailyAssigments = (DailyAssigmentsDto) ArrayDaily.get(ArrayDaily.size() - 1);
         Object[] fila = new Object[5];
-        fila[0] = 1;
-        fila[1] = objDailyAssigments.getEmployeeDto().getSurname();
-        fila[2] = objDailyAssigments.getEmployeeDto().getJobTitle();
-        fila[3] = objDailyAssigments.getTaskDto().getDescription();
+        fila[0] = objDailyAssigments.getCode();
+        fila[1] = objDailyAssigments.getNameEmployeeDaily();
+        fila[2] = objDailyAssigments.getCargoEmployeeDaily();
+        fila[3] = objDailyAssigments.getNameTaskDaily();
         fila[4] = objDailyAssigments.getTaskProgress();
         TablaDaily.addRow(fila);
+    }
+
+    public void actualizar() {
+        TablaDaily = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
+        int inputprogress = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su progreso"));
+        int indxselect = DailyAssigmentsView.tableAssignTask.getSelectedRow();
+        int resultado = this.Buscar(indxselect);
+        if (resultado >= 0) {
+            objDailyAssigments = (DailyAssigmentsDto) ArrayDaily.get(ArrayDaily.size() - 1);
+            TablaDaily.setValueAt(inputprogress, resultado, 4);
+            Object[] fila = new Object[5];
+            fila[0] = objDailyAssigments.getCode();
+            fila[1] = objDailyAssigments.getNameEmployeeDaily();
+            fila[2] = objDailyAssigments.getCargoEmployeeDaily();
+            fila[3] = objDailyAssigments.getNameTaskDaily();
+            fila[4] = inputprogress;
+            ArrayDaily.set(indxselect, objDailyAssigments);
+        }
     }
 }

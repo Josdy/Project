@@ -173,7 +173,8 @@ public class TaskView extends javax.swing.JInternalFrame {
 
     private void btnRegisterTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterTaskActionPerformed
         // TODO add your handling code here:
-        tas.InsertTask(123, txtDescriptionTask.getText(), cboTaskPriority.getSelectedItem().toString(), Integer.parseInt(txtTime.getText()), "abc");
+        tas.InsertTask(12, "sas", "dd", 34, "fff");
+       // tas.InsertTask(123, txtDescriptionTask.getText(), cboTaskPriority.getSelectedItem().toString(), Integer.parseInt(txtTime.getText()), "abc");
     }//GEN-LAST:event_btnRegisterTaskActionPerformed
 
     private void btnDeleteTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteTaskActionPerformed
