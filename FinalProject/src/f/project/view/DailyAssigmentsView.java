@@ -28,9 +28,9 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
         jLabel3 = new javax.swing.JLabel();
         txtProgressTask = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        cboTasks = new javax.swing.JComboBox<>();
+        cboTasks = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
-        cboEmployees = new javax.swing.JComboBox<>();
+        cboEmployees = new javax.swing.JComboBox<String>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
@@ -91,11 +91,11 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
 
         jLabel4.setText("(%)");
 
-        cboTasks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
+        cboTasks.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
 
         jLabel1.setText("EMPLEADO:");
 
-        cboEmployees.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
+        cboEmployees.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -164,8 +164,8 @@ DailyAssigmentsCtl ct=new DailyAssigmentsCtl();
     private rojeru_san.RSButton btnDeleteDayliAssigments;
     private rojeru_san.RSButton btnRegisterDayliAssigments;
     private rojeru_san.RSButton btnUpdateDayliAssigments;
-    private javax.swing.JComboBox<String> cboEmployees;
-    private javax.swing.JComboBox<String> cboTasks;
+    public static javax.swing.JComboBox<String> cboEmployees;
+    public static javax.swing.JComboBox<String> cboTasks;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

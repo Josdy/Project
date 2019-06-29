@@ -1,5 +1,6 @@
 package f.project.view;
 
+import f.project.dao.DailyAssigmentsDao;
 import f.project.view.Informationview;
 import java.awt.Dimension;
 import java.beans.PropertyVetoException;
@@ -184,6 +185,7 @@ public class MenuView extends javax.swing.JFrame {
 
     private void btnDailyAssigmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyAssigmentsActionPerformed
         // TODO add your handling code here:
+         DailyAssigmentsDao Dai=new DailyAssigmentsDao();
         String name = this.btnDailyAssigments.getName();
         win(true, name);
         try {
@@ -191,7 +193,8 @@ public class MenuView extends javax.swing.JFrame {
         } catch (PropertyVetoException ex) {
             Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        Dai.loadEmployee();
+        Dai.loadTask();
     }//GEN-LAST:event_btnDailyAssigmentsActionPerformed
 
     private void btnTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaskActionPerformed
