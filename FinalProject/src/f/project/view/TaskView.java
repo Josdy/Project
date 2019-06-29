@@ -29,12 +29,11 @@ public class TaskView extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         txtTime = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        cboTaskPriority = new javax.swing.JComboBox<>();
+        cboTaskPriority = new javax.swing.JComboBox<String>();
         txtDescriptionTask = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtCodetask = new javax.swing.JTextField();
         btnRegisterTask = new rojeru_san.RSButton();
-        btnUpdateTask = new rojeru_san.RSButton();
         btnDeleteTask = new rojeru_san.RSButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -79,7 +78,7 @@ public class TaskView extends javax.swing.JInternalFrame {
 
         jLabel5.setText("TIEMPO:");
 
-        cboTaskPriority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-" }));
+        cboTaskPriority.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
 
         txtDescriptionTask.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -146,15 +145,6 @@ public class TaskView extends javax.swing.JInternalFrame {
         });
         getContentPane().add(btnRegisterTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 131, -1));
 
-        btnUpdateTask.setBackground(new java.awt.Color(95, 158, 160));
-        btnUpdateTask.setText("Actualizar");
-        btnUpdateTask.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateTaskActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnUpdateTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 131, -1));
-
         btnDeleteTask.setBackground(new java.awt.Color(95, 158, 160));
         btnDeleteTask.setText("Eliminar");
         btnDeleteTask.addActionListener(new java.awt.event.ActionListener() {
@@ -166,10 +156,6 @@ public class TaskView extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnUpdateTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateTaskActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateTaskActionPerformed
 
     private void btnRegisterTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterTaskActionPerformed
         // TODO add your handling code here:
@@ -197,7 +183,6 @@ public class TaskView extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnDeleteTask;
     private rojeru_san.RSButton btnRegisterTask;
-    private rojeru_san.RSButton btnUpdateTask;
     public static javax.swing.JComboBox<String> cboTaskPriority;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

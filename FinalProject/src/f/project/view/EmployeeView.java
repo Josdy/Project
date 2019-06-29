@@ -41,7 +41,6 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnRegisterEmployee = new rojeru_san.RSButton();
-        btnUpdateEmployee = new rojeru_san.RSButton();
         btnDeleteEmployee = new rojeru_san.RSButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -63,6 +62,11 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         setName("Employee"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tableEmployee = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex,int colIndex){
+                return false;
+            }
+        };
         tableEmployee.setBackground(new java.awt.Color(95, 158, 160));
         tableEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -220,15 +224,6 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         });
         getContentPane().add(btnRegisterEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, -1, -1));
 
-        btnUpdateEmployee.setBackground(new java.awt.Color(95, 158, 160));
-        btnUpdateEmployee.setText("Actualizar");
-        btnUpdateEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateEmployeeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnUpdateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, -1, -1));
-
         btnDeleteEmployee.setBackground(new java.awt.Color(95, 158, 160));
         btnDeleteEmployee.setText("Eliminar");
         btnDeleteEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -247,10 +242,6 @@ public class EmployeeView extends javax.swing.JInternalFrame {
         emp.InsertEmployee(123, "a", "a", "a", 1.0, 2, "a");
 
     }//GEN-LAST:event_btnRegisterEmployeeActionPerformed
-
-    private void btnUpdateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateEmployeeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateEmployeeActionPerformed
 
     private void btnDeleteEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeActionPerformed
         // TODO add your handling code here:
@@ -308,7 +299,6 @@ public class EmployeeView extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnDeleteEmployee;
     private rojeru_san.RSButton btnRegisterEmployee;
-    private rojeru_san.RSButton btnUpdateEmployee;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -26,9 +26,6 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
         btnDeleteDayliAssigments = new rojeru_san.RSButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtProgressTask = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         cboTasks = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
         cboEmployees = new javax.swing.JComboBox<String>();
@@ -40,6 +37,11 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
         setName("Assigment"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tableAssignTask = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex,int colIndex){
+                return false;
+            }
+        };
         tableAssignTask.setBackground(new java.awt.Color(95, 158, 160));
         tableAssignTask.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -50,6 +52,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
             }
         ));
         tableAssignTask.setSelectionBackground(new java.awt.Color(67, 150, 209));
+        tableAssignTask.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tableAssignTask);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 1140, 238));
@@ -86,12 +89,6 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
 
         jLabel2.setText("TAREA:");
 
-        jLabel3.setText("PROGRESO:");
-
-        txtProgressTask.setEnabled(false);
-
-        jLabel4.setText("(%)");
-
         cboTasks.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
 
         jLabel1.setText("EMPLEADO:");
@@ -106,18 +103,12 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                 .addGap(190, 190, 190)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(49, 49, 49)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtProgressTask, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cboEmployees, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cboTasks, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                    .addComponent(jLabel2))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cboEmployees, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cboTasks, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,12 +124,7 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(cboTasks, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtProgressTask, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(36, 36, 36))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 750, 163));
@@ -170,11 +156,8 @@ public class DailyAssigmentsView extends javax.swing.JInternalFrame {
     public static javax.swing.JComboBox<String> cboTasks;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JTable tableAssignTask;
-    private javax.swing.JTextField txtProgressTask;
     // End of variables declaration//GEN-END:variables
 }

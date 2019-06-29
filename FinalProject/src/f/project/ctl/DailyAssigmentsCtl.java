@@ -85,7 +85,7 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
         TablaDaily = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
         objDailyAssigments = (DailyAssigmentsDto) ArrayDaily.get(ArrayDaily.size() - 1);
         Object[] fila = new Object[5];
-        fila[0] = objDailyAssigments.getCode()+1;
+        fila[0] = objDailyAssigments.getCode() + 1;
         fila[1] = objDailyAssigments.getNameEmployeeDaily();
         fila[2] = objDailyAssigments.getCargoEmployeeDaily();
         fila[3] = objDailyAssigments.getNameTaskDaily();
@@ -94,20 +94,30 @@ public class DailyAssigmentsCtl extends ClassGeneral implements InterfazGeneral 
     }
 
     public void actualizar() {
-        TablaDaily = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
-        int inputprogress = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su progreso"));
         int indxselect = DailyAssigmentsView.tableAssignTask.getSelectedRow();
-        int resultado = this.Buscar(indxselect);
-        if (resultado >= 0) {      
-            objDailyAssigments = (DailyAssigmentsDto) ArrayDaily.get(ArrayDaily.size() - 1);
-            TablaDaily.setValueAt(inputprogress, resultado, 4);
-            Object[] fila = new Object[5];
-            fila[0] = objDailyAssigments.getCode();
-            fila[1] = objDailyAssigments.getNameEmployeeDaily();
-            fila[2] = objDailyAssigments.getCargoEmployeeDaily();
-            fila[3] = objDailyAssigments.getNameTaskDaily();
-            fila[4] = inputprogress;
-            ArrayDaily.set(indxselect, objDailyAssigments);
+        TablaDaily = ((DefaultTableModel) DailyAssigmentsView.tableAssignTask.getModel());
+        try {
+            int progreso = Integer.parseInt((String) TablaDaily.getValueAt(indxselect, 4));
+            if (progreso == 100) {
+                int inputprogress = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su progreso"));
+                int resultado = this.Buscar(indxselect);
+                if (resultado >= 0) {
+                    objDailyAssigments = (DailyAssigmentsDto) ArrayDaily.get(ArrayDaily.size() - 1);
+                    TablaDaily.setValueAt(inputprogress, resultado, 4);
+                    Object[] fila = new Object[5];
+                    fila[0] = objDailyAssigments.getCode();
+                    fila[1] = objDailyAssigments.getNameEmployeeDaily();
+                    fila[2] = objDailyAssigments.getCargoEmployeeDaily();
+                    fila[3] = objDailyAssigments.getNameTaskDaily();
+                    fila[4] = inputprogress;
+                    ArrayDaily.set(indxselect, objDailyAssigments);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "LA TAREA A SIDO FINALIZADA POR TENER EL 100% DE PROGRESO");
+            }
+        } catch (Exception e) {
+            System.out.println("OCURRIO UN ERROR" + e);
         }
+
     }
 }
